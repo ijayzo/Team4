@@ -1,10 +1,10 @@
 spring:
   application:
-    name: ReimbursementRequestAPI
+    name: TravelPackagesAPI
   datasource:
     username: postgres
     password: password
-    url: jdbc:postgresql://34.132.27.250:5432/db_reimburse
+    url: jdbc:postgresql://34.71.209.226:5432/travel_packages
     driver-class-name: org.postgresql.Driver
 
 server:
