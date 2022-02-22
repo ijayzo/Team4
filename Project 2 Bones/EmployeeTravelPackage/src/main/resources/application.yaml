@@ -7,6 +7,12 @@ spring:
     url: jdbc:postgresql://34.71.209.226:5432/travel_packages
     driver-class-name: org.postgresql.Driver
 
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+
 server:
   port: 8080
 
