@@ -13,6 +13,7 @@ create table if not exists employee_packages(
  package_id serial not null unique,
  travel_date varchar(30) not null unique,
  travel_destination varchar(20) not null unique,
+ try_delete_this =======>>>>>>>>>
  package_status varchar(10) not null
  );
 
