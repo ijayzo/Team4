@@ -14,6 +14,7 @@ create table if not exists employee_packages(
  travel_date varchar(30) not null unique,
  travel_destination varchar(20) not null unique,
  try_delete_this =======>>>>>>>>>
+ Master only
  package_status varchar(10) not null
  );
 
