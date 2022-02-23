@@ -21,7 +21,7 @@ public class PackageHistory {
     @Id
     private int packageHistoryId;
     private int packageId; // FK to EmployeePackages
-    @DateTimeFormat(pattern = "yyyy-Mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date createdDate;
     private String eventDescription;

@@ -1,10 +1,14 @@
 package com.example.demo.Security;
 
+
 import com.example.demo.Models.Employee;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 public class EmployeeUserDetails implements UserDetails {
 
@@ -16,7 +20,9 @@ public class EmployeeUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        Set<GrantedAuthority> getRoles = new HashSet<>();
+        getRoles.add(new SimpleGrantedAuthority(employee.getRole().name()));
+        return getRoles;
     }
 
     @Override
@@ -37,7 +43,7 @@ public class EmployeeUserDetails implements UserDetails {
     @Override
     public boolean isAccountNonLocked() {
 
-        return employee.isDeleted() ? false : true;
+        return true;
     }
 
     @Override
@@ -47,6 +53,6 @@ public class EmployeeUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return employee.isDeleted() ? false : true;
+        return true;
     }
 }

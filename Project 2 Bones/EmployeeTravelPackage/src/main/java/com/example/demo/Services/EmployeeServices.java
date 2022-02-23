@@ -1,5 +1,6 @@
 package com.example.demo.Services;
 
+
 import com.example.demo.DAO.EmployeeRepository;
 import com.example.demo.DTO.CreateEmployeeRequest;
 import com.example.demo.Exceptions.UserAlreadyExist;
@@ -11,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 
 @Service
@@ -30,11 +30,11 @@ public class EmployeeServices {
         employee.setEmail(createEmployeeRequest.getEmail());
         employee.setFirstName(createEmployeeRequest.getFirstName());
         employee.setLastName(createEmployeeRequest.getLastName());
-        employee.setEmail(createEmployeeRequest.getEmail());
+        employee.setUsername(createEmployeeRequest.getUsername());
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(createEmployeeRequest.getPassword());
         employee.setPassword(encodedPassword);
-        //TODO: Determine how we will deal with roles
+        employee.setRole(createEmployeeRequest.getRole());
 
 
         employeeRepository.save(employee);
@@ -46,7 +46,7 @@ public class EmployeeServices {
 
 
     private boolean isEmployeeExist(String username){
-        Optional<Employee>  findEmployeeByUserName = employeeRepository.getEmployeeByUsername(username);
+        Optional<Employee> findEmployeeByUserName = employeeRepository.getEmployeeByUsername(username);
         return findEmployeeByUserName.isPresent() ? true : false;
     }
 }

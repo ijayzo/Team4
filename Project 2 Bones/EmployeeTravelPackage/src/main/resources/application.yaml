@@ -11,6 +11,10 @@ spring:
     hibernate:
       ddl-auto: update
 
+jwt:
+  secret: token_secret
+  expiry:  36000
+
 
 
 server:

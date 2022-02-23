@@ -8,8 +8,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("HR")
 public class HR_Controller {
-    @Autowired
 
-
-    @GetMapping("/get-req-by-empid/{empID}")
 }

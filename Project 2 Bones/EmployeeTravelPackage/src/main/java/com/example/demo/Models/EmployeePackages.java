@@ -1,17 +1,15 @@
 package com.example.demo.Models;
 
 
-import com.example.demo.DTO.PackageCategory;
+
 import com.example.demo.DTO.PackageStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import main.java.com.example.demo.DTO.PackageCategory;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -22,12 +20,14 @@ public class EmployeePackages {
     @Id
     private int employeePackageId;
     private int employeeId;
+    @Enumerated(EnumType.STRING)
     private PackageCategory packageCategory;
-    @DateTimeFormat(pattern = "yyyy-Mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date travelDate;
     private String travelDestination;
     private int packageDays;
+    @Enumerated(EnumType.STRING)
     private PackageStatus packageStatus;
     private double packageCost;
     private int hotelPartnerId;  // FK to HotelPartners
