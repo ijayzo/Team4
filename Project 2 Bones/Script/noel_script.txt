@@ -1,0 +1,114 @@
+-- Go through each field.  Put comments on the contents for common understanding (data dictionary type) 
+--NOTE on Creation:  Follow bellow order as some tables foreign key are dependent on the highler level tables to be existing
+--common notes on API development and CRUD
+  --no record deletion, just mark isdeleted to true
+  --API should check for correct value on ENUM fields before saving.  If its not one of the standard values, it will not create or update
+
+create table if not exists employees2 (
+ employee_id serial primary key,				-- primary key integer	
+ employee_name varchar(50) not null,			-- to simplify, this will contain the fullname of the employee, its notunique as the employee can have the same name
+ employee_email varchar(50) not null,			-- self explanatory, i removed the unique in order to reuse the same email for multiple employee records
+ employee_role varchar(20) not null,       		-- Enum values 'admin','employee' removed the unique tag because the role will be reused multiple times
+ employee_username varchar(30) not null unique, -- unique username for logiin
+ employee_password varchar(30) not null,        -- unencrypted password
+ isdeleted boolean								-- default to false on record creation
+ );
+
+select * from employees2;
+
+-- Simple hotel partner table
+-- create first record as 'NO HOTEL' to be used by packages without hotel accomodation
+create table if not exists hotel_partner(
+ hotel_id serial primary key,								-- primary key integer
+ hotel_name 		varchar(100) not null,					-- free text
+ hotel_location		varchar(50) not null,					-- location of the hotel.  This should match the package travel_destination before it can be linked.  cannot be editable to maintain referential integrity
+ isdeleted boolean											-- default to false on record creation
+ );
+
+select * from hotel_partner;
+
+--dep = departing
+-- record in the table will be populated using API (by HR),  we can show this functionality as an HR user.  To control the number of calls also
+-- create first record as 'NO Flight' to be used by packages without Flight
+-- departure and arrival into are merged for simplicity
+create table if not exists dep_travel_info(
+flight_id serial primary key,								-- primary key integer
+dep_carriercode varchar(2),									-- 2 letter airline carrier code from API
+dep_flight_number int4,										-- flight number from API
+dep_flight_date varchar(10),								-- flight date from API / search options
+dep_airport varchar(20),									-- departure airport from API / search options
+dep_time varchar(20),										-- departure time from API / search options
+arr_flight_date varchar(10),								-- arrival date from API / search options
+arr_airport varchar(20),									-- arrival airport from API / search options
+arr_time varchar(20),										-- arrival time from API / search options
+isdeleted boolean											-- default to false on record creation
+);
+
+select * from dep_travel_info;
+
+-- emp packages show the past, already bought (future), and saved(pending pay)
+-- package_status = traveled (past travel), bought (for future), pending (not paid, just saved. not reserved)
+create table if not exists employee_packages(
+ package_id serial primary key,								-- primary key integer
+ employee_id int4 references employees2 (employee_id),		-- foreign key to employee.  can be used to implement that the same employee who created the package can edit or cancel it
+ package_category varchar(50) not null,						-- Enum values 'staycation','nature','beach','family','abroad','cruise'
+ travel_date date,											-- api should check that only future date allowed.  This is for info and once the date has past, employee cannot book this anymore or admin cannot change it or cancel it
+ travel_destination varchar(50) not null,					-- location of the package, removed unique as we can have multiple packages in the same destination.  Will be used in GUI to filter
+ package_days int4,											-- number of days for the package, for Info and filtering later in APP 2, API to make sure value here is greater than 0
+ package_status varchar(10) not null,						-- enum values 'draft','published','cancelled','completed'.  Unpon creation, 'draft' is defaulted.  while in draft, the HR can make changes.  once published, HR can cancel or mark as completed. Packages marked as completed cannot be cancelled
+ package_cost decimal(10,2),								-- total cost of the package.  no breakdown for simplicity. must be greater thn 0
+ hotel_id int4 references hotel_partner (hotel_id),		    -- foreign key to hotel_partner.  This will point to no hotel in case the package does not have any hotel accomodation 
+ flight_id int4 references dep_travel_info (flight_id),		-- foreign key to dep_travel_info.  This will point to no flight record in case the package does not have any flights
+ package_description 		varchar(200),					-- package details information for display purpose only.  Can be null (for testing)
+ signuplimit int4,											-- will contain 1 to 100 only.  One the number of signups is reached, the package will not be available anymore for employee signups 
+ isdeleted boolean											-- default to false on record creation
+ );
+
+select * from employee_packages;
+
+-- Contains package signup transactions
+-- Employee and only signup to a package once.  This table needs to be checked before allowing the employee to signup.  Only packages with publishe status can be signed up.  The number of signups cannot be more than package signuplimit
+-- Take note to only consider isdeleted=false in the business rule checks
+create table if not exists package_signup(
+ signup_id serial primary key,								-- primary key integer
+ employee_id int4 references employees2 (employee_id),		-- foreign key to employee who signed up
+ package_id int4 references employee_packages (package_id), -- foreign key to employee_packages where the employee signed up to
+ signup_date  date,											-- date info automatically stamped at time of signup
+ isdeleted boolean											-- default to false on record creation
+ );
+
+select * from package_signup;
+
+-- this will be a very simple implementation.  
+-- only create and read 
+-- the application will be the one to write the events.  samples event below to be captured
+-- Record Creation 
+-- Record update 
+-- Any status Update
+-- Any Signup Transaction (Add Delete Modify)
+-- Any Review Transaction (Add Delete Modify)
+create table if not exists package_history(
+ history_id serial primary key,								-- primary key integer
+ package_id int4 references employee_packages (package_id), -- foreign key to employee_packages where the history is linked
+ event_date  date,											-- event date info automatically stamped at time of record creation
+ revet_desc	varchar(100)									-- event description.  to be filled up by the system
+ );
+
+select * from package_history;
+
+-- Contains Employee Reviews on packages Availed
+--Note:  One Employee can review one specific package once only.  Employee can delete and modify his review,  Only packages with status 'completed' can be reviewed  
+create table if not exists review_comments(
+ review_id serial primary key,								-- primary key integer
+ employee_id int4 references employees2 (employee_id),		-- foreign key to employee.
+ package_id int4 references employee_packages (package_id), -- foreign key to employee_packages
+ review_score 		int4,									-- value 1,2,3,4,5 only.  Can be averaged on package level
+ review_comments	varchar(200),							-- free text review.  for display only. can be NULL
+ isdeleted boolean											-- default to false on record creation
+ );
+
+
+select * from review_comments;
+
+
+
