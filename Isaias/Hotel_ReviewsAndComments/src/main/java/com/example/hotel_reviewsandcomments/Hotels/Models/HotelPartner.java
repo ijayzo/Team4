@@ -1,10 +1,16 @@
 package com.example.hotel_reviewsandcomments.Hotels.Models;
 
+import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Data
 @Entity
 @Table(name = "hotel_partners")
 public class HotelPartner {

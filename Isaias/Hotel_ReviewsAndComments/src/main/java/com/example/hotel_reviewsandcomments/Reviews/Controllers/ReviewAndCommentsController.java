@@ -15,6 +15,7 @@ import java.net.URISyntaxException;
 @RequestMapping("/reviews")
 public class ReviewAndCommentsController {
     private ReviewsServices reviewsServices;
+    int port;
 
     @Autowired
     public ReviewAndCommentsController(ReviewsServices reviewsServices) {
