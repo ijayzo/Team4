@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.example.demo.ReimbursementServTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.749 s <<< FAILURE! - in com.example.demo.ReimbursementServTest
-shouldReturnALLModels  Time elapsed: 0.726 s  <<< ERROR!
-java.lang.NullPointerException
-	at com.example.demo.ReimbursementServTest.shouldReturnALLModels(ReimbursementServTest.java:41)
-

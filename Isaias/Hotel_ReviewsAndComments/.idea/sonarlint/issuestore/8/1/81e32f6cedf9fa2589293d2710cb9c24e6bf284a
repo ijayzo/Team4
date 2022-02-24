@@ -1,14 +1,0 @@
-
-^
-java:S1854"CRemove this useless assignment to local variable "generateHotelId".(¦’„Πώÿÿÿÿ
-O
-java:S1481"4Remove this unused "generateHotelId" local variable.(¦’„Πώÿÿÿÿ
-^
-java:S1854("CRemove this useless assignment to local variable "generateHotelId".(¦’„Πώÿÿÿÿ
-O
-java:S1481("4Remove this unused "generateHotelId" local variable.(¦’„Πώÿÿÿÿ
-…
-java:S1104"cMake reviewCommentRepository a static final constant or non-public and provide accessors if needed.(Ώ®»όÿÿÿÿ8ΐ•Κς/
-€
-java:S1104"eMake employeePackageRepository a static final constant or non-public and provide accessors if needed.(†΅Τύÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(δω‘
