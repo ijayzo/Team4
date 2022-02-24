@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: com.example.demo.EmployeesServiceTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 0.779 s <<< FAILURE! - in com.example.demo.EmployeesServiceTest
+deleteByIdTest  Time elapsed: 0.749 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+employeeRepository.deleteById(
+    <Capturing argument>
+);
+-> at com.example.demo.EmployeesServiceTest.deleteByIdTest(EmployeesServiceTest.java:79)
+Actually, there were zero interactions with this mock.
+
+	at com.example.demo.EmployeesServiceTest.deleteByIdTest(EmployeesServiceTest.java:79)
+
+getAllEmployeesTest  Time elapsed: 0.007 s  <<< FAILURE!
+java.lang.AssertionError: expected:<null> but was:<username>
+	at com.example.demo.EmployeesServiceTest.getAllEmployeesTest(EmployeesServiceTest.java:54)
+
+returnEmployeeById  Time elapsed: 0.003 s  <<< ERROR!
+java.util.NoSuchElementException: No value present
+	at com.example.demo.EmployeesServiceTest.returnEmployeeById(EmployeesServiceTest.java:93)
+
