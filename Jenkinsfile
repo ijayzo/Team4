@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'echo "I am in Jenkins File......"'
+        sh 'echo "I am in Jenkins"'
       }
     }
 
