@@ -13,9 +13,6 @@ pipeline {
             
         }
 
-        stage("Build") {
-            echo "This is building"
-        }
     }
   
 }
