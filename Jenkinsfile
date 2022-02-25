@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'echo "I am in the Build, Maven Test Might Fail"'
+        sh 'echo "I am in the Build, Changed the Maven Plugin in Jenkins"'
       }
     }
     stage('MavenTest') {
