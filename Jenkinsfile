@@ -6,6 +6,14 @@ pipeline {
         sh 'echo "Test is running good"'
       }
     }
+    stage('Build') {
+      steps {
+        sh 'echo "I am in the Build"'
+      }
+    }
 
   }
 }
+
+
+ 
