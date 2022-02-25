@@ -1,10 +1,16 @@
 package com.example.hotel_reviewsandcomments.Reviews.Models;
 
+import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "review_comments")
 public class ReviewComment {
@@ -76,5 +82,8 @@ public class ReviewComment {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public void save(ReviewComment reviewComment) {
     }
 }

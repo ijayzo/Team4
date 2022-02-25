@@ -45,7 +45,7 @@ public class HotelPartnerController {
 
     //post new hotel partner
     @PostMapping("/new")
-    public ResponseEntity<?> createHotelPartner(@RequestBody CreateHotelPartnerDTO createHotelPartner) throws URISyntaxException {
+    public ResponseEntity<?> createHotelPartner(@RequestBody HotelPartner createHotelPartner) throws URISyntaxException {
         hotelPartnerServices.createHotelPartner(createHotelPartner);
 
         return ResponseEntity.created(new URI("http://localhost:" + port + "/hotels/new/created")).build();
