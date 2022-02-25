@@ -1,16 +1,11 @@
 pipeline {
-    agent any
-   
-    stages {
-        stage("Test") {
-            steps {
-                echo "========executing Test========"
-                echo "Testing "
-
-            }
-            
-        }
-
+  agent any
+  stages {
+    stage('Test') {
+      steps {
+        sh 'echo "I am in Jenkins Running test"'
+      }
     }
-  
+
+  }
 }
