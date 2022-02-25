@@ -16,7 +16,6 @@ jwt:
   expiry:  36000
 
 
-
 server:
   port: 8080
 
