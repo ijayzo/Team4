@@ -8,7 +8,14 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'echo "I am in the Build"'
+        sh 'echo "I am in the Build, Maven Test Might Fail"'
+      }
+    }
+    stage('MavenTest') {
+      steps {
+          withMaven {
+            sh 'mvn test'
+        }
       }
     }
 
@@ -17,3 +24,5 @@ pipeline {
 
 
  
+
+  
