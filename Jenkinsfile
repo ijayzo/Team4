@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'echo "I am in the Build, Change Directory"'
+        sh 'echo "I am in the Build, Change Directory Trail"'
       }
     }
     stage('MavenTest') {
