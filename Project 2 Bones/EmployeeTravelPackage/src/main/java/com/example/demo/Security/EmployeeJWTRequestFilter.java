@@ -60,6 +60,7 @@ public class EmployeeJWTRequestFilter  extends OncePerRequestFilter {
             if(employeeJWT.validate(token, userDetails)) {
                 logger.info("Token valid");
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails == null ? Collections.emptyList() : userDetails.getAuthorities());
+                System.out.println(userDetails.getAuthorities());
                 usernamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
             }
