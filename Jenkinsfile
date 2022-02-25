@@ -1,9 +1,9 @@
-pipeline{
+pipeline {
     agent any
    
-    stages{
-        stage("Test"){
-            steps{
+    stages {
+        stage("Test") {
+            steps {
                 echo "========executing Test========"
 
                 withMaven {
@@ -13,7 +13,7 @@ pipeline{
             
         }
 
-        stage("Build"){
+        stage("Build") {
             echo "This is building"
         }
     }
