@@ -26,6 +26,10 @@ public class EmployeeController {
         return ResponseEntity.accepted().build();
     }
 
+    /**
+     *
+     * @return the list of all Employees
+     */
     @GetMapping("/getAllEmployees")
     public ResponseEntity getAllEmployees(){
         return ResponseEntity.status(HttpStatus.OK).body(employeeServices.getAllEmployee());
