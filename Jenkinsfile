@@ -1,7 +1,7 @@
 pipeline {
     environment {
         registry ="project4/java"
-        dockerHubCreds = 'docker_hub'
+        dockerHubCreds = 'Docker_Credential'
         dockerImage = ''
     }
   agent any
