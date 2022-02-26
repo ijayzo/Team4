@@ -15,7 +15,11 @@ public class EmployeeController {
     @Autowired
     private EmployeeServices employeeServices;
 
-
+    /**
+     *
+     * @param createEmployeeRequest the request needed to create an Employee
+     * @return a status OK
+     */
     @PostMapping("/createEmployee")
     public ResponseEntity createEmployee(@RequestBody CreateEmployeeRequest createEmployeeRequest){
         employeeServices.createEmployee(createEmployeeRequest);
