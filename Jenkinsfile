@@ -19,8 +19,6 @@ pipeline {
             branch 'master'
         }
       steps {
-
-        sh 'echo "Building Java Jar File'
         withMaven {
             sh 'mvn clean package'
         }
