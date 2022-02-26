@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry ="project4/java"
+        registry ="project2team4/java"
         dockerHubCreds = 'Docker_Credential'
         dockerImage = ''
     }
