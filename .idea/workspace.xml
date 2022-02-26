@@ -5,52 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6f40458-40df-4a9e-b17a-a9048cf397d3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/Jenkinsfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Controllers/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/HR_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Controllers/HR_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DAO/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/DAO/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/AllEmployeeInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/DTO/AllEmployeeInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/AllEmployeesDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/DTO/AllEmployeesDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/AllPackagesDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/DTO/AllPackagesDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/CreateEmployeeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/DTO/CreateEmployeeRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/EmployeeDecisionsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/DTO/EmployeeDecisionsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/EmployeeEmailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/DTO/EmployeeEmailDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/DTO/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/DTO/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/PackageCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/DTO/PackageCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/PackageStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/DTO/PackageStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/DTO/Roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/EmployeeTravelPackageApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/EmployeeTravelPackageApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Exceptions/ExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Exceptions/ExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Exceptions/UserAlreadyExist.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Exceptions/UserAlreadyExist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/DepartingTravelInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Models/DepartingTravelInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/EmployeePackages.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Models/EmployeePackages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/HotelPartners.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Models/HotelPartners.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/PackageHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Models/PackageHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/ReviewComments.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Models/ReviewComments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeJWT.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Security/EmployeeJWT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeJWTRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Security/EmployeeJWTRequestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Security/EmployeeSecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Security/EmployeeUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Security/EmployeeUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Services/EmployeeServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/PackagesServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/java/com/example/demo/Services/PackagesServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeePackage/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/DeleteRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/EmployeeResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Exceptions/UserDoesNotExist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DAO/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/DAO/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeJWTRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeJWTRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -97,6 +74,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/EmployeePackage" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.EmployeeTravelPackageApplication">
@@ -126,7 +104,8 @@
       <workItem from="1645678245091" duration="2656000" />
       <workItem from="1645691854909" duration="11253000" />
       <workItem from="1645770212129" duration="3163000" />
-      <workItem from="1645773479082" duration="1286000" />
+      <workItem from="1645773479082" duration="3160000" />
+      <workItem from="1645841753003" duration="6042000" />
     </task>
     <servers />
   </component>
@@ -143,6 +122,30 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java</url>
+          <line>25</line>
+          <properties class="com.example.demo.Services.EmployeeServices" method="createEmployee">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java</url>
+          <line>62</line>
+          <properties class="com.example.demo.Services.EmployeeServices" method="deleteEmployee">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

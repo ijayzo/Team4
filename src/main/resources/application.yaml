@@ -13,7 +13,7 @@ spring:
 
 jwt:
   secret: token_secret
-  expiry:  36000
+  expiry:  360000
 
 
 

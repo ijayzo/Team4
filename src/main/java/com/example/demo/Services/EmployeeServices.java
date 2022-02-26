@@ -3,7 +3,9 @@ package com.example.demo.Services;
 
 import com.example.demo.DAO.EmployeeRepository;
 import com.example.demo.DTO.CreateEmployeeRequest;
+import com.example.demo.DTO.EmployeeResponse;
 import com.example.demo.Exceptions.UserAlreadyExist;
+import com.example.demo.Exceptions.UserDoesNotExist;
 import com.example.demo.Models.Employee;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -40,8 +43,33 @@ public class EmployeeServices {
         employeeRepository.save(employee);
     }
 
-    public List<Employee> getAllEmployee(){
-        return employeeRepository.findAll();
+    public List<EmployeeResponse> getAllEmployee(){
+
+        return employeeRepository.findAll().stream()
+                .filter(employee -> employee.isDeleted() == false)
+                .map(employee -> {
+                    EmployeeResponse employeeResponse = new EmployeeResponse();
+                    employeeResponse.setEmployeeId(employee.getEmployeeId());
+                    employeeResponse.setEmail(employee.getEmail());
+                    employeeResponse.setFirstName(employee.getFirstName());
+                    employeeResponse.setLastName(employee.getLastName());
+                    employeeResponse.setRole(employee.getRole());
+                    return employeeResponse;
+
+                }).collect(Collectors.toList());
+
+    }
+
+    public void deleteEmployee(int employeeId){
+        Optional<Employee> getEmployee = employeeRepository.getEmployeeByEmployeeId(employeeId);
+        if(getEmployee.isPresent()){
+            Employee employee = getEmployee.get();
+            System.out.println(employee.getFirstName());
+            employee.setDeleted(true);
+            employeeRepository.save(employee);
+        }else{
+            throw new UserDoesNotExist();
+        }
     }
 
 
