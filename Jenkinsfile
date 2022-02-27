@@ -53,6 +53,24 @@ pipeline {
               }
           }
         }
+         stage('Deploy into Kubernetes') {
+            when {
+                branch 'master'
+            }
+          steps {
+              sh 'echo "Starting Deployment to Kubernetes"'
+              sh 'sed -i "s/%TAG%/$BUILD_NUMBER/g" ./Kubernetes/deployment.yml'
+              sh 'cat ./Kubernetes/deployment.yml'
+                step([$class: 'KubernetesEngineBuilder',
+                      projectId: 'united-button-342103',
+                      clusterName: 'gke-pogi-firstcluste-first-default-po-4720babf-13kd',
+                      zone: 'us-central1-a',
+                      manifestPattern: 'Kubernetes/',
+                      credentialsId: 'united-button-342103',
+                      verifyDeployment: true
+                ])
+          }
+        }
 
   }
 }
