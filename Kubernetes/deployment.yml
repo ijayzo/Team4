@@ -19,7 +19,7 @@ spec:
           - name: DB_NAME
             value: postgres
           - name: DB_HOST
-            value: "10.97.128.3"
+            value: "35.188.29.161"
           - name: DB_PASSWORD
             value: admin
           - name: DB_PORT
