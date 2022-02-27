@@ -41,7 +41,7 @@ public class LoginController {
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> generateToken(@RequestBody LoginRequest loginRequest) throws Exception {
         authenticate(loginRequest.getUsername(), loginRequest.getPassword());
-
+        System.out.println("Group test");
         final UserDetails userDetails = employeeUserDetailsService.loadUserByUsername(loginRequest.getUsername());
         final String token = employeeJWT.generateToken(userDetails);
       String getUsername = userDetails.getAuthorities().stream().findFirst().get().toString();
