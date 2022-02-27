@@ -7,16 +7,16 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: java-deployment
+      app: java-deploy
   template:
     metadata:
       labels:
-        app: java-deployment
+        app: java-deploy
     spec:
       containers:
       - image: project2team4/java:latest
         imagePullPolicy: Always
-        name: java-deployment
+        name: java-deploy
         ports: 
         - containerPort: 8080
         livenessProbe:
@@ -34,7 +34,7 @@ metadata:
   name: java-service
 spec:
   selector:
-    app: java-deployment
+    app: java-deploy
     type: NodePort
   ports:
   - port: 8080
