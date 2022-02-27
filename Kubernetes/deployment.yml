@@ -7,11 +7,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: java
+      app: java-deployment
   template:
     metadata:
       labels:
-        app: java
+        app: java-deployment
     spec:
       containers:
       - image: project2team4/java:latest
@@ -34,7 +34,7 @@ metadata:
   name: java-service
 spec:
   selector:
-    app: java
+    app: java-deployment
     type: NodePort
   ports:
   - port: 8080
