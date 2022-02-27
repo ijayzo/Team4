@@ -15,6 +15,17 @@ spec:
     spec:
       containers:
       - image: project2team4/java:latest
+        env:
+          - name: DB_NAME
+            value: postgres
+          - name: DB_HOST
+            value: "10.97.128.3"
+          - name: DB_PASSWORD
+            value: admin
+          - name: DB_PORT
+            value: "5432"
+          - name: DB_USERNAME
+            value: postgres
         imagePullPolicy: Always
         name: java
         ports: 
