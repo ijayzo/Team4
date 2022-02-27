@@ -63,7 +63,7 @@ pipeline {
               sh 'cat ./Kubernetes/deployment.yml'
                 step([$class: 'KubernetesEngineBuilder',
                       projectId: 'united-button-342103',
-                      clusterName: 'pogi-firstcluste-first',
+                      clusterName: 'pogi-firstcluster',
                       zone: 'us-central1-a',
                       manifestPattern: 'Kubernetes/',
                       credentialsId: 'united-button-342103',
