@@ -20,12 +20,12 @@ spec:
         ports: 
         - containerPort: 8000
         livenessProbe:
-            initialDelaySeconds: 60
+            initialDelaySeconds: 100
             httpGet:
               path: /employee/getAllEmployees
               port: 8000
         readinessProbe:
-            initialDelaySeconds: 60
+            initialDelaySeconds: 100
             httpGet:
               path: /employee/getAllEmployees
               port: 8000
