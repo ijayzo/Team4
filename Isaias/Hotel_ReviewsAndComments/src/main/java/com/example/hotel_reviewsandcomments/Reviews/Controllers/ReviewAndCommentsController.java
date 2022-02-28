@@ -23,7 +23,7 @@ public class ReviewAndCommentsController {
     public ReviewAndCommentsController(ReviewsServices reviewsServices) {
         this.reviewsServices = reviewsServices;
     }
-
+    //tested
     @GetMapping("/rev-by-package-id/{id}")
     public ResponseEntity<?> getAllReviewsByPackageId(@PathVariable Integer employee_package_id){
         AllReviewsDTO allReviews = reviewsServices.getAllReviewsByPackageID(employee_package_id);
@@ -34,12 +34,13 @@ public class ReviewAndCommentsController {
         return ResponseEntity.ok(allReviews);
     }
 
+    //tested not working
     @PostMapping("/new")
     public ResponseEntity createReview(@RequestBody ReviewComment newReviewComment){
         reviewsServices.createReview(newReviewComment);
         return ResponseEntity.accepted().build();
     }
-
+    //tested
    //update review
     @PatchMapping("/update")
     public ResponseEntity updateReview(@RequestBody ReviewComment newReviewComment){
@@ -47,6 +48,7 @@ public class ReviewAndCommentsController {
         return ResponseEntity.accepted().build();
     }
 
+    //tested, doesnt work
     @DeleteMapping("/deleteReview/{review_comment_id}")
     public ResponseEntity deleteReview(@PathVariable int review_comment_id){
         ReviewComment reviewComment= reviewsServices.getReviewById(review_comment_id);

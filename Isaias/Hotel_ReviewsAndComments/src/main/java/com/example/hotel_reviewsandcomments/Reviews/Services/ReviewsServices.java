@@ -23,26 +23,25 @@ public class ReviewsServices {
 
     public ReviewsServices() {
     }
-
+    //teseted
     public AllReviewsDTO getAllReviewsByPackageID(Integer employee_package_id){
         List<ReviewComment> allReviews = reviewCommentRepository.getAllByEmployeePackageId(employee_package_id);
         List<ReviewDTO> reviewDTOList = allReviews.stream().map(
                 r -> new ReviewDTO(r.getId(), r.getEmployeeId(),r.getEmployeePackageId(),r.getReviewComments(),r.getReviewScore())).collect(Collectors.toList());
         return new AllReviewsDTO(reviewDTOList);
     }
-
+    //tested
     public void createReview(ReviewComment reviewComment) {
         reviewCommentRepository.save(reviewComment);
     }
 
+    //tested
     public ReviewComment getReviewById(int review_comment_id){
         return reviewCommentRepository.findById(review_comment_id).isPresent()  ?(reviewCommentRepository.findById(review_comment_id)).get() : null;
     }
-
+//    tested
     public void deleteReview(int id){
         reviewCommentRepository.deleteById(id);
     }
 
-    public void save(CreateReviewDTO createReviewTest) {
-    }
 }

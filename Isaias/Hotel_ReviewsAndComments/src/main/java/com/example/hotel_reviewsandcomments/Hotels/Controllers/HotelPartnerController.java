@@ -26,6 +26,7 @@ public class HotelPartnerController {
 
     // TODO Dont want to use PathVariable, change please - for Richmond
     //get hotel by hotel id
+    //tested
     @GetMapping("/id/{hotel_partner_id}")
     public ResponseEntity<?> getHotelByHotelId(@PathVariable Integer hotel_partner_id){
         HotelPartner hotelPartner = hotelPartnerServices.getHotelByHotelId(hotel_partner_id);
@@ -35,14 +36,14 @@ public class HotelPartnerController {
         }
         return ResponseEntity.ok(hotelPartner);
     }
-
+    //tested
     //getAll hotels
     @GetMapping("/all")
     public ResponseEntity<?> getALlHotels(){
         List<HotelPartner> allHotels = hotelPartnerServices.getAllHotels();
         return ResponseEntity.ok(allHotels);
     }
-
+    //tested
     //post new hotel partner
     @PostMapping("/new")
     public ResponseEntity<?> createHotelPartner(@RequestBody HotelPartner createHotelPartner) throws URISyntaxException {

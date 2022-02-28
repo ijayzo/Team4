@@ -26,20 +26,16 @@ public class HotelPartnerServices {
 
     public HotelPartnerServices() {
     }
-
+    //testes
     public HotelPartner getHotelByHotelId(int hotel_partner_id){
         return hotelPartnerRepository.findById(hotel_partner_id).get();
     }
-
+    //    tested
     public List<HotelPartner> getAllHotels(){
         hotelPartnerList = hotelPartnerRepository.findAll();
         return hotelPartnerList;
     }
-
-//    public int createHotelPartner(CreateHotelPartnerDTO createHotelPartner){
-//        HotelPartner newHotelPartner = new HotelPartner(createHotelPartner.getHotel_partner_id(), createHotelPartner.getHotel_name(),createHotelPartner.getHotel_location());
-//        return hotelPartnerRepository.save(newHotelPartner).getId();
-//    }
+    //tested
     public void createHotelPartner(HotelPartner hotelPartner) {
         hotelPartnerRepository.save(hotelPartner);
     }
