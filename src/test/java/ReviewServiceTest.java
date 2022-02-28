@@ -4,12 +4,16 @@ import com.example.demo.Services.ReviewServices;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.mockito.*;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class ReviewServiceTest {
     @Mock
@@ -36,7 +40,7 @@ public class ReviewServiceTest {
     @Test
     public void saveTest(){
 
-        Mockito.when(reviewCommentRepository.save(any())).thenReturn(newReviewComment());
+        when(reviewCommentRepository.save(any())).thenReturn(newReviewComment());
         reviewsServices.createReview(newReviewComment());
 
         ArgumentCaptor<ReviewComments> captureReview = ArgumentCaptor.forClass(ReviewComments.class);
@@ -52,5 +56,37 @@ public class ReviewServiceTest {
 
     }
 
+    @Test
+    public void getReviewByReviewId(){
+        Optional<ReviewComments> getReview = reviewCommentRepository.findById(56);
+        Assert.assertEquals(Optional.ofNullable(newReviewComment().getEmployeeId()),Optional.ofNullable(17));
+//        Assert.assertEquals(Optional.ofNullable(newReviewComment().getIsDeleted()),Optional.ofNullable(false));
+        Assert.assertEquals(Optional.ofNullable(newReviewComment().getReviewComments()),Optional.ofNullable("Great package!"));
+        Assert.assertEquals(Optional.ofNullable(newReviewComment().getReviewScore()),Optional.ofNullable(7));
+    }
+    //getALLById
+    @Test
+    public void getAllReviewsById(){
+        List<ReviewComments> reviewCommentList = reviewCommentRepository.findAllById(Collections.singleton(56));
+        when(reviewCommentRepository.findAll()).thenReturn(reviewCommentList);
+//        List<ReviewComment> result = reviewsServices.find
+        Assert.assertFalse(reviewCommentList.isEmpty());
+    }
+
+    @Test
+    public void deleteReviewById(){
+        ReviewComments reviewComment = reviewCommentRepository.findById(56).get();
+        reviewCommentRepository.delete(reviewComment);
+
+        ReviewComments reviewComment1 = null;
+        Optional<ReviewComments> optionalReviewComment = reviewCommentRepository.findById(56);
+
+        if(optionalReviewComment.isPresent()){
+            reviewComment1 = optionalReviewComment.get();
+        }
+
+        Assertions.assertEquals(reviewComment1,null);
+
+    }
 
 }
