@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pipeline {
     environment {
         registry ="project2team4/java"
@@ -78,4 +79,6 @@ pipeline {
 
 
 
+=======
+>>>>>>> origin/isaias_test
 
