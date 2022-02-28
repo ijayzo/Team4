@@ -67,7 +67,6 @@ pipeline {
                       zone: 'us-central1-a',
                       manifestPattern: 'Kubernetes/',
                       credentialsId: 'united-button-342103',
-                      verifyDeployments: true
                 ])
           }
         }
