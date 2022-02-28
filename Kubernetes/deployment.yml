@@ -21,11 +21,11 @@ spec:
         - containerPort: 8080
         livenessProbe:
             httpGet:
-              path: /employee
+              path: /employee/getAllEmployees
               port: 8080
         readinessProbe:
             httpGet:
-              path: /employee
+              path: /employee/getAllEmployees
               port: 8080
 ---
 apiVersion: v1
