@@ -3,6 +3,7 @@ pipeline {
         registry ="project2team4/java"
         dockerHubCreds = 'Docker_Credential'
         dockerImage = ''
+        deploymentFile = 'Kubernetes/deployment.yml'
     }
   agent any
   stages {

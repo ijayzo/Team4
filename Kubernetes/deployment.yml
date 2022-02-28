@@ -22,12 +22,12 @@ spec:
         livenessProbe:
             initialDelaySeconds: 100
             httpGet:
-              path: /employee/getAllEmployees
+              path: /employee
               port: 8000
         readinessProbe:
             initialDelaySeconds: 100
             httpGet:
-              path: /employee/getAllEmployees
+              path: /employee
               port: 8000
 
 
