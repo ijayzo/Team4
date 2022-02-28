@@ -29,19 +29,38 @@ spec:
             httpGet:
               path: /employee/getAllEmployees
               port: 8000
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project2team4-deployment-grafana
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: grafana-deployment
+  template:
+    metadata:
+      labels:
+        app: grafana-deployment
+    spec:
+      containers:
       - image: grafana/grafana:latest
         imagePullPolicy: Always
         name: grafana
         ports:
-          - containerPort: 3000
+         - containerPort: 3000
         livenessProbe:
-            httpGet:
-              path: /
-              port: 3000
+              httpGet:
+                path: /
+                port: 3000
         readinessProbe:
               httpGet:
                 path: /
                 port: 3000
+
 
 
 ---
@@ -64,7 +83,7 @@ metadata:
   name: grafana-service
 spec:
   selector:
-    app: java-deployment
+    app: grafana-deployment
     type: NodePort
   ports:
     - port: 3000
