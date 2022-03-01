@@ -53,6 +53,7 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .antMatchers("/employee").permitAll()
                 .antMatchers("/actuator/**").permitAll()
                .antMatchers("/employee/getAllEmployees").permitAll()//TODO: Restrict It From Employees
+
                 .anyRequest().authenticated();
 
         http.addFilterBefore(employeeJWTRequestFilter, UsernamePasswordAuthenticationFilter.class);
