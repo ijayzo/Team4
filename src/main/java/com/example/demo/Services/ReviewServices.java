@@ -53,6 +53,5 @@ public class ReviewServices {
        reviewCommentRepository.save(reviewComment);
     }
 
-    public void save(CreateReviewDTO createReviewTest) {
-    }
+
 }

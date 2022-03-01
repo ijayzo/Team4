@@ -1,7 +1,7 @@
 
 import com.example.demo.Controllers.HotelPartnerController;
 import com.example.demo.DAO.HotelPartnerRepository;
-import com.example.demo.Models.HotelPartner;
+import com.example.demo.Models.HotelPartnerT;
 import com.example.demo.Services.HotelPartnerServices;
 import org.junit.Assert;
 import org.junit.Before;
@@ -28,7 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(HotelPartnerController.class)
 public class HotelControllerTest {
     @Mock
-    private HotelPartner hotelPartner;
+    private HotelPartnerT hotelPartner;
     @MockBean
     private HotelPartnerRepository hotelPartnerRepository;
     @MockBean
@@ -44,8 +44,8 @@ public class HotelControllerTest {
                 .build();
     }
 
-    private HotelPartner createHotel(){
-        HotelPartner testHotel = new HotelPartner();
+    private HotelPartnerT createHotel(){
+        HotelPartnerT testHotel = new HotelPartnerT();
         testHotel.setId(8);
         testHotel.setHotelName("TestHotel");
         testHotel.setHotelLocation("NewLocation");
@@ -56,7 +56,7 @@ public class HotelControllerTest {
     @Test
     public void shouldReturnModel() throws Exception{
         int id = 10;
-        HotelPartner testHotel = new HotelPartner();
+        HotelPartnerT testHotel = new HotelPartnerT();
         testHotel = createHotel();
 
         when(hotelPartnerServices.getHotelByHotelId(10)).thenReturn(createHotel());
@@ -68,7 +68,7 @@ public class HotelControllerTest {
 
     @Test
     public void shouldGetAll() throws Exception{
-        List<HotelPartner> hotelPartnerList = hotelPartnerRepository.findAll();
+        List<HotelPartnerT> hotelPartnerList = hotelPartnerRepository.findAll();
         when(hotelPartnerServices.getAllHotels()).thenReturn(hotelPartnerList);
         mockMvc.perform(get("/hotel/all"))
                 .andExpect(status().isOk());
@@ -84,15 +84,15 @@ public class HotelControllerTest {
 //    }
     @Test
     public void shouldCreateHotel(){
-        HotelPartner hotelPartner = new HotelPartner();
+        HotelPartnerT hotelPartner = new HotelPartnerT();
         hotelPartner.setId(15);
         hotelPartner.setHotelName("Testing");
         hotelPartner.setHotelLocation("TestLocation");
         hotelPartner.setIsDeleted(false);
 
-        when(hotelPartnerRepository.save(any(HotelPartner.class))).thenReturn(hotelPartner);
+        when(hotelPartnerRepository.save(any(HotelPartnerT.class))).thenReturn(hotelPartner);
 
-        HotelPartner savedHotel = hotelPartnerRepository.save(hotelPartner);
+        HotelPartnerT savedHotel = hotelPartnerRepository.save(hotelPartner);
 
         Assert.assertFalse(savedHotel.getHotelName().isEmpty());
 

@@ -2,7 +2,7 @@ package com.example.demo.Controllers;
 
 import com.example.demo.DTO.CreateHotelPartnerRequest;
 import com.example.demo.DTO.GetHotelPartnerIdRequest;
-import com.example.demo.Models.HotelPartner;
+import com.example.demo.Models.HotelPartnerT;
 import com.example.demo.Services.HotelPartnerServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,7 +36,7 @@ public class HotelPartnerController {
     //getAll hotels
     @GetMapping("/all")
     public ResponseEntity getALlHotels(){
-        List<HotelPartner> allHotels = hotelPartnerServices.getAllHotels();
+        List<HotelPartnerT> allHotels = hotelPartnerServices.getAllHotels();
         return ResponseEntity.ok(allHotels);
     }
 

@@ -1,6 +1,6 @@
 
 import com.example.demo.DAO.HotelPartnerRepository;
-import com.example.demo.Models.HotelPartner;
+import com.example.demo.Models.HotelPartnerT;
 import com.example.demo.Services.HotelPartnerServices;
 import org.junit.Assert;
 import org.junit.Before;
@@ -32,8 +32,8 @@ public class HotelServiceTest {
         MockitoAnnotations.openMocks(this);
         System.out.println("I am here");
     }
-    private HotelPartner newHotelPartner(){
-        HotelPartner hotelPartner = new HotelPartner();
+    private HotelPartnerT newHotelPartner(){
+        HotelPartnerT hotelPartner = new HotelPartnerT();
         hotelPartner.setId(20);
         hotelPartner.setHotelName("TestHotel");
         hotelPartner.setIsDeleted(false);
@@ -79,14 +79,14 @@ public class HotelServiceTest {
     @Test
     public void shouldReturnAllHotels() {
         when(hotelPartnerRepository.findAll()).thenReturn(Collections.emptyList());
-        List<HotelPartner> theHotelList = hotelPartnerServices.getAllHotels();
+        List<HotelPartnerT> theHotelList = hotelPartnerServices.getAllHotels();
         assertTrue(theHotelList.isEmpty());
     }
 
     @Test
     void getHotelByHotelId(){
 
-        Optional<HotelPartner> hotel = hotelPartnerRepository.findById(20);
+        Optional<HotelPartnerT> hotel = hotelPartnerRepository.findById(20);
         Assert.assertEquals(Optional.ofNullable(newHotelPartner().getHotelName()), Optional.ofNullable("TestHotel"));
         Assert.assertEquals(Optional.ofNullable(newHotelPartner().getIsDeleted()), Optional.ofNullable(false));
         Assert.assertEquals(Optional.ofNullable(newHotelPartner().getHotelLocation()),  Optional.ofNullable("Niceville"));
