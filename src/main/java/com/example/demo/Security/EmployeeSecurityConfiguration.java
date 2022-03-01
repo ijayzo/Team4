@@ -52,7 +52,7 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .antMatchers("/employee/createEmployee").permitAll()
                 .antMatchers("/employee").permitAll()
                 .antMatchers("/actuator/**").permitAll()
-                .antMatchers("/employee/getAllEmployees").hasAuthority(Roles.ADMIN.name()) //TODO: Restrict It From Employees
+//                .antMatchers("/employee/getAllEmployees").hasAuthority(Roles.ADMIN.name()) //TODO: Restrict It From Employees
                 .anyRequest().authenticated();
 
         http.addFilterBefore(employeeJWTRequestFilter, UsernamePasswordAuthenticationFilter.class);
