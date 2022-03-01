@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("employee")
+@RequestMapping("/employee")
 public class EmployeeController {
 
     @Autowired
@@ -28,7 +28,7 @@ public class EmployeeController {
 
     @GetMapping
     public ResponseEntity start(){
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.OK).body("Hello World");
     }
 
     /**
