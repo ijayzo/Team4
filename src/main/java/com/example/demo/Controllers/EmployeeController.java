@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("http://localhost:3030") // TODO: Dont hard Code this
 @RequestMapping("/employee")
 public class EmployeeController {
 
