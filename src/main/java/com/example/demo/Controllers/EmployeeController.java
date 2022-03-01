@@ -3,6 +3,8 @@ package com.example.demo.Controllers;
 import com.example.demo.DTO.CreateEmployeeRequest;
 import com.example.demo.Services.EmployeeServices;
 import org.apache.catalina.connector.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,8 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeServices employeeServices;
+
+    private static Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
     /**
      *
@@ -28,6 +32,7 @@ public class EmployeeController {
 
     @GetMapping
     public ResponseEntity start(){
+        logger.info("I am Ready");
         return ResponseEntity.status(HttpStatus.OK).body("Hello World");
     }
 

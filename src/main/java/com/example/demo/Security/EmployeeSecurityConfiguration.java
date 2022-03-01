@@ -51,6 +51,7 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .antMatchers(HttpMethod.POST,"/auth/**").permitAll()
                 .antMatchers("/employee/createEmployee").permitAll()
                 .antMatchers("/employee").permitAll()
+                .antMatchers("/actuator/**").permitAll()
                 .antMatchers("/employee/getAllEmployees").hasAuthority(Roles.ADMIN.name()) //TODO: Restrict It From Employees
                 .anyRequest().authenticated();
 
