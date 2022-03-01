@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - image: project2team4/java:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         name: java
         ports: 
         - containerPort: 8000
