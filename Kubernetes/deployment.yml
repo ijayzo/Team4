@@ -62,6 +62,20 @@ spec:
                 port: 3000
 
 
+      - image: grafana/loki:latest
+        imagePullPolicy: Always
+        name: loki
+        ports:
+          - containerPort: 3100
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3100
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3100
+
 
 ---
 apiVersion: v1
