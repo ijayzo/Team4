@@ -5,6 +5,7 @@ import com.example.demo.DTO.AllReviewsDTO;
 import com.example.demo.DTO.CreateReviewDTO;
 import com.example.demo.DTO.ReviewDTO;
 import com.example.demo.Models.ReviewComments;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +32,15 @@ public class ReviewServices {
         return new AllReviewsDTO(reviewDTOList);
     }
 
-    public void createReview(ReviewComments reviewComment) {
+    public void createReview(CreateReviewDTO createReviewComment) {
+        int generateID = Integer.parseInt(RandomStringUtils.randomNumeric(5));
+        ReviewComments reviewComment = new ReviewComments();
+        reviewComment.setReviewCommentId(generateID);
+        reviewComment.setReviewComments(createReviewComment.getReviewComments());
+        reviewComment.setReviewScore(createReviewComment.getReviewScore());
+        reviewComment.setEmployeePackageId(createReviewComment.getEmployeePackageId());
+        reviewComment.setDeleted(false);
+
         reviewCommentRepository.save(reviewComment);
     }
 

@@ -1,6 +1,7 @@
 package com.example.demo.DAO;
 
 import com.example.demo.DTO.AllReviewsDTO;
+import com.example.demo.DTO.CreateReviewDTO;
 import com.example.demo.Models.ReviewComments;
 import com.example.demo.Services.ReviewServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,14 +34,14 @@ public class ReviewAndCommentsController {
     }
 
     @PostMapping("/new")
-    public ResponseEntity createReview(@RequestBody ReviewComments newReviewComment){
+    public ResponseEntity createReview(@RequestBody CreateReviewDTO newReviewComment){
         reviewsServices.createReview(newReviewComment);
         return ResponseEntity.accepted().build();
     }
 
     //update review
     @PatchMapping("/update")
-    public ResponseEntity updateReview(@RequestBody ReviewComments newReviewComment){
+    public ResponseEntity updateReview(@RequestBody CreateReviewDTO newReviewComment){
         reviewsServices.createReview(newReviewComment);
         return ResponseEntity.accepted().build();
     }
