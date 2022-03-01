@@ -18,4 +18,5 @@ import java.util.Optional;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     Optional<Employee> getEmployeeByUsername(String username);
+    Optional<Employee> getEmployeeByEmployeeId(int employeeId);
 }

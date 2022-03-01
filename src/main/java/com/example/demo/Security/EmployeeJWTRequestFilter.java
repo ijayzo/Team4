@@ -41,15 +41,19 @@ public class EmployeeJWTRequestFilter  extends OncePerRequestFilter {
 
         if(requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
             token = requestTokenHeader.substring(7);
-            logger.info("Token is present" + token);
+            logger.info("Token is present " + token);
             try {
+                System.out.println("Was is going on");
                 username = employeeJWT.getUsernameFromToken(token);
+                System.out.println("Why is there and errror");
                 System.out.println(username);
             } catch (IllegalArgumentException ae) {
                 logger.debug("Unable to get token");
             } catch (ExpiredJwtException ee) {
                 logger.debug("Token has Expired");
-
+            } catch (Exception e){
+                logger.debug("This is the error");
+                System.out.println(e.getStackTrace());
             }
         } else {
             logger.warn("JWT does not begin with Bearer string on " + requestUrl);
@@ -61,6 +65,7 @@ public class EmployeeJWTRequestFilter  extends OncePerRequestFilter {
             if(employeeJWT.validate(token, userDetails)) {
                 logger.info("Token valid");
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails == null ? Collections.emptyList() : userDetails.getAuthorities());
+                System.out.println(userDetails.getAuthorities());
                 usernamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
             }
