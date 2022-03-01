@@ -22,7 +22,7 @@ public class DepartingTravelInfo {
 
     @Id
     private int departureTravelInfoId;
-    //TODO: Needed??
+    //TODO: Needed???
     //private int employeeId;
     private int flightId;
     private String depatureFlight;
