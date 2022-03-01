@@ -10,6 +10,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 jwt:
   secret: token_secret
@@ -18,7 +19,7 @@ jwt:
 
 
 server:
-  port: 8080
+  port: 8000
 
 api:
   config:

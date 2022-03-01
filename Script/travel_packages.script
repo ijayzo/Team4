@@ -1,0 +1,36 @@
+ -- 
+ create table if not exists employees (
+ employee_id serial primary key,
+ employee_name varchar(30) not null unique,
+ employee_email varchar(30) not null unique,
+ employee_role varchar(20) not null unique
+ );
+
+-- emp packages show the past, already bought (future), and saved(pending pay)
+-- package_status = traveled (past travel), bought (for future), pending (not paid, just saved. not reserved)
+create table if not exists employee_packages(
+ employee_id int4 references employees (employee_id),
+ package_id serial not null unique,
+ travel_date varchar(30) not null unique,
+ travel_destination varchar(20) not null unique,
+ try_delete_this =======>>>>>>>>>
+ Master only
+ package_status varchar(10) not null
+ );
+
+--dep = departing
+create table if not exists dep_travel_info(
+dep_flight_number int4 primary key,
+dep_flight_date varchar(10),
+dep_airport varchar(20),
+dep_time varchar(20),
+dep_timezone varchar(20)
+);
+
+create table if not exists packages(
+flight_number int4 references dep_travel_info(dep_flight_number),
+arrival_city varchar(20),
+arrival_timezone varchar(20),
+arrival_airport varchar(20),
+arrival_time varchar(20)
+);

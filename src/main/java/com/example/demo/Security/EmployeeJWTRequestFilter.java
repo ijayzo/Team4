@@ -34,6 +34,7 @@ public class EmployeeJWTRequestFilter  extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
         final String requestTokenHeader = request.getHeader("Authorization");
+        final String requestUrl = request.getRequestURI();
         String username = null;
         String token = null;
 
@@ -55,7 +56,7 @@ public class EmployeeJWTRequestFilter  extends OncePerRequestFilter {
                 System.out.println(e.getStackTrace());
             }
         } else {
-            logger.warn("JWT does not begin with Bearer string");
+            logger.warn("JWT does not begin with Bearer string on " + requestUrl);
         }
 
         if(username != null && SecurityContextHolder.getContext().getAuthentication() == null) {

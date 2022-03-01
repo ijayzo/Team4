@@ -25,8 +25,23 @@
         <appender-ref ref="STDOUT" />
     </root>
 
+    <root>
+        <level value="DEBUG" />
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <root>
+        <level value="WARN" />
+        <appender-ref ref="STDOUT" />
+    </root>
 
     <logger name="com.example" level="INFO">
         <appender-ref ref="STDOUT" />
     </logger>
+
+    <logger name="com.example" level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+
 </configuration>

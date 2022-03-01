@@ -1,5 +1,6 @@
 package com.example.demo.Security;
 
+import com.example.demo.DTO.Roles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -49,7 +50,9 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST,"/auth/**").permitAll()
                 .antMatchers("/employee/createEmployee").permitAll()
-//                .antMatchers("employee/getAllEmployees").hasAuthority(Roles.ADMIN.name()) //TODO: Restrict It From Employees
+                .antMatchers("/employee").permitAll()
+                .antMatchers("/actuator/**").permitAll()
+               .antMatchers("/employee/getAllEmployees").permitAll()//TODO: Restrict It From Employees
                 .anyRequest().authenticated();
 
         http.addFilterBefore(employeeJWTRequestFilter, UsernamePasswordAuthenticationFilter.class);

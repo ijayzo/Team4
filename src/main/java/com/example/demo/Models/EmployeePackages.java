@@ -2,11 +2,11 @@ package com.example.demo.Models;
 
 
 
+import com.example.demo.DTO.PackageCategory;
 import com.example.demo.DTO.PackageStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import com.example.demo.DTO.PackageCategory;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;

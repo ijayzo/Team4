@@ -1,8 +1,9 @@
 pipeline {
     environment {
-        registry ="project4/java"
-        dockerHubCreds = 'docker_hub'
+        registry ="project2team4/java"
+        dockerHubCreds = 'Docker_Credential'
         dockerImage = ''
+        deploymentFile = 'Kubernetes/deployment.yml'
     }
   agent any
   stages {
@@ -19,8 +20,6 @@ pipeline {
             branch 'master'
         }
       steps {
-
-        sh 'echo "Building Java Jar File'
         withMaven {
             sh 'mvn clean package'
         }
@@ -55,11 +54,29 @@ pipeline {
               }
           }
         }
+         stage('Deploy into Kubernetes') {
+            when {
+                branch 'master'
+            }
+          steps {
+              sh 'echo "Starting Deployment to Kubernetes"'
+              sh 'sed -i "s/%TAG%/$BUILD_NUMBER/g" ./Kubernetes/deployment.yml'
+              sh 'cat ./Kubernetes/deployment.yml'
+                step([$class: 'KubernetesEngineBuilder',
+                      projectId: 'united-button-342103',
+                      clusterName: 'pogi-firstcluster',
+                      zone: 'us-central1-a',
+                      manifestPattern: 'Kubernetes/',
+                      credentialsId: 'united-button-342103',
+                      verifyDeployments: true
+                ])
+          }
+        }
 
   }
 }
 
 
- 
 
-  
+
+
