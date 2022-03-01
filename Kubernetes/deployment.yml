@@ -20,12 +20,10 @@ spec:
         ports: 
         - containerPort: 8000
         livenessProbe:
-            initialDelaySeconds: 2
             httpGet:
               path: /employee
               port: 8000
         readinessProbe:
-            initialDelaySeconds: 2
             httpGet:
               path: /employee
               port: 8000
@@ -40,7 +38,6 @@ metadata:
 spec:
   selector:
     app: java-deployment
-    type: NodePort
   ports:
   - port: 8000
     targetPort: 8000
