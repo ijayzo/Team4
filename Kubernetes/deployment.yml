@@ -61,20 +61,39 @@ spec:
                 path: /
                 port: 3000
 
-
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project2team4-deployment-loki
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: loki-deployment
+  template:
+    metadata:
+      labels:
+        app: loki-deployment
+    spec:
+      containers:
       - image: grafana/loki:latest
-        imagePullPolicy: Always
         name: loki
+        imagePullPolicy: Always
         ports:
-          - containerPort: 3100
+        - containerPort: 3100
         livenessProbe:
-          httpGet:
-            path: /
-            port: 3100
+              httpGet:
+                path: /
+                port: 3100
         readinessProbe:
-          httpGet:
-            path: /
-            port: 3100
+              httpGet:
+                path: /
+                port: 3100
+
+
+
+
 
 
 ---
@@ -104,6 +123,20 @@ spec:
       targetPort: 3000
 
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: loki-service
+spec:
+  selector:
+    app: loki-deployment
+    type: NodePort
+  ports:
+    - port: 3100
+      targetPort: 3100
+
+
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -130,5 +163,18 @@ spec:
       name: grafana-service
       port:
         number: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: loki-ingress-data
+  labels:
+    name: loki-ingress
+spec:
+  defaultBackend:
+    service:
+      name: loki-service
+      port:
+        number: 3100
 
 
