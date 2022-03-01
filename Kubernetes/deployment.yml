@@ -35,31 +35,29 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: project2team4-deployment-grafana
+  labels:
+    app: project2team4-deployment-grafana
+  name: project2team4-deployment-grafana-v1
+  namespace: default
 spec:
   replicas: 2
+  minReadySeconds: 45
   selector:
     matchLabels:
       app: grafana-deployment
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
   template:
     metadata:
       labels:
         app: grafana-deployment
     spec:
       containers:
-      - image: grafana/grafana:latest
-        imagePullPolicy: Always
-        name: grafana
-        ports:
-         - containerPort: 3000
-        livenessProbe:
-              httpGet:
-                path: /
-                port: 3000
-        readinessProbe:
-              httpGet:
-                path: /
-                port: 3000
+        - name: grafana
+          image: grafana/grafana:latest
 
 ---
 apiVersion: apps/v1
@@ -115,12 +113,17 @@ kind: Service
 metadata:
   name: grafana-service
 spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+    - targetPort: 3000
+      port: 3000
+    - protocol: TCP
+      port: 3000
   selector:
     app: grafana-deployment
-    type: NodePort
-  ports:
-    - port: 3000
-      targetPort: 3000
+
+
 
 ---
 apiVersion: v1
@@ -151,18 +154,18 @@ spec:
         number: 8000
 
 ---
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: grafana-ingress-data
-  labels:
-    name: grafana-ingress
-spec:
-  defaultBackend:
-    service:
-      name: grafana-service
-      port:
-        number: 3000
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  name: grafana-ingress-data
+#  labels:
+#    name: grafana-ingress
+#spec:
+#  defaultBackend:
+#    service:
+#      name: grafana-service
+#      port:
+#        number: 3000
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
