@@ -1,39 +1,24 @@
-package com.example.hotel_reviewsandcomments.Review;
-
 import com.example.demo.DAO.ReviewAndCommentsController;
 import com.example.demo.DAO.ReviewCommentRepository;
 import com.example.demo.Models.ReviewComments;
 import com.example.demo.Services.ReviewServices;
-import net.minidev.json.JSONUtil;
-import org.checkerframework.checker.nullness.Opt;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
-//import org.springframework.security.config.annotation.web.builders.WebSecurity;
-//import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.awt.*;
 import java.util.Optional;
 
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.mockito.MockitoAnnotations.initMocks;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -92,6 +77,16 @@ public class ReviewControllerTest {
         mockMvc.perform(get("/reviews/rev-by-package-id/{id}", id))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(id));
+    }
+    //new try delete,
+    //TODO change the url
+    @Test
+    public void delete() throws Exception{
+        Mockito.when(testReviewDAO.findById(createTestReview().getReviewCommentId())).thenReturn(Optional.of(createTestReview()));
+
+        mockMvc.perform(MockMvcRequestBuilders.delete("/reviews/delete")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
     }
     // dont use
     //    @Test
