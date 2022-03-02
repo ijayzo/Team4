@@ -4,6 +4,7 @@ import io.jsonwebtoken.ExpiredJwtException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -26,6 +27,9 @@ public class EmployeeJWTRequestFilter  extends OncePerRequestFilter {
 
     @Autowired
     private EmployeeUserDetailsService employeeUserDetailsService;
+
+    @Value("${api.config.api2-url: http://localhost:3000}")
+    private String test;
 
     private static Logger logger = LoggerFactory.getLogger(EmployeeJWTRequestFilter.class);
 
@@ -56,6 +60,7 @@ public class EmployeeJWTRequestFilter  extends OncePerRequestFilter {
                 System.out.println(e.getStackTrace());
             }
         } else {
+            logger.debug("This is the URL" + test);
             logger.warn("JWT does not begin with Bearer string on " + requestUrl);
         }
 

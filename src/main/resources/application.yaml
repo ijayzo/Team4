@@ -22,7 +22,9 @@ server:
 
 api:
   config:
-    api2-url: ${}
+    api2-url: ${GRAFANA_URL}
+
+
 
 
 management:
