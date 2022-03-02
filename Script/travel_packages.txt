@@ -1,6 +1,6 @@
  -- 
  create table if not exists employees (
- employee_id serial primary key,
+ employee_id serial primary key,,
  employee_first_name varchar(30) not null unique,
  employee_last_name varchar(30) not null unique,
  employee_password varchar(30) not null unique,
