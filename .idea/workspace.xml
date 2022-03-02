@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d6f40458-40df-4a9e-b17a-a9048cf397d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/EmployeePackages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/EmployeePackages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeSecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +47,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="25XfEeELRVLGeTaz2mDpcoHxqRM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -62,7 +66,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="16" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/demo/Models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -71,6 +75,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Coding\Revature\Team4\Proj2Team4\src\main\java\com\example\demo\Controllers" />
+      <recent name="D:\Coding\Revature\Team4\Proj2Team4\src\main\java\com\example\demo\Services" />
+      <recent name="D:\Coding\Revature\Team4\Proj2Team4\src\main\java\com\example\demo\DAO" />
       <recent name="D:\Coding\Revature\Team4\Proj2Team4\src\main\java\com\example\demo\Models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

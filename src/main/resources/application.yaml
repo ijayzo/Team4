@@ -2,9 +2,9 @@ spring:
   application:
     name: TravelPackagesAPI
   datasource:
-    username: postgres
-    password: admin
-    url: jdbc:postgresql://35.188.29.161:5432/postgres
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:admin}
+    url: jdbc:postgresql://${DB_HOST:35.188.29.161}:${DB_PORT:5432}/${DB_NAME:postgres}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -24,3 +24,9 @@ server:
 api:
   config:
     api2-url: ${}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,metrics,prometheus"

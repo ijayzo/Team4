@@ -19,6 +19,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class EmployeePackages {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int employeePackageId;
     private int employeeId;
     @Enumerated(EnumType.STRING)
