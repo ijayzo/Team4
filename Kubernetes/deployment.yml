@@ -36,7 +36,7 @@ kind: Deployment
 metadata:
   name: project2team4-deployment-grafana
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: grafana-deployment
