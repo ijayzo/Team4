@@ -26,7 +26,7 @@ public class HotelPartnerController {
         this.hotelPartnerServices = hotelPartnerServices;
     }
 
-    // TODO Dont want to use PathVariable, change please - for Richmond
+
     //get hotel by hotel id
     @GetMapping("/get")
     public ResponseEntity getHotelByHotelId(@RequestBody GetHotelPartnerIdRequest getHotelPartner){
