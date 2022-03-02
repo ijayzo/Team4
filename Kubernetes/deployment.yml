@@ -67,7 +67,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: project2team4-deployment-grafana
+  name: project2team4-deployment-loki
 spec:
   replicas: 2
   selector:
