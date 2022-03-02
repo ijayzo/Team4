@@ -14,7 +14,7 @@ spec:
         app: java-deployment
     spec:
       containers:
-      - image: project2team4/java:%TAG%
+      - image: project2team4/java:latest
         imagePullPolicy: Always
         name: java
         ports: 
