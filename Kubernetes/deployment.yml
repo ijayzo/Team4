@@ -30,6 +30,38 @@ spec:
               path: /actuator/health
               port: 8080
 
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project2team4-deployment-grafana
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: grafana-deployment
+  template:
+    metadata:
+      labels:
+        app: grafana-deployment
+    spec:
+      containers:
+        - image: grafana/grafana:latest
+          imagePullPolicy: Always
+          name: grafana
+          ports:
+            - containerPort: 3000
+          livenessProbe:
+            initialDelaySeconds: 5
+            httpGet:
+              path: /
+              port: 3000
+          readinessProbe:
+            initialDelaySeconds: 5
+            httpGet:
+              path: /
+              port: 3000
+
 
 
 ---
@@ -43,6 +75,24 @@ spec:
   ports:
   - port: 8080
     targetPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: grafana-service
+  name: grafana
+  namespace: default
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "3000"
+      port: 3000
+      targetPort: 3000
+  selector:
+    app: grafana-deployment
+
 
 
 
