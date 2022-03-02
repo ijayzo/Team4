@@ -2,14 +2,14 @@ package com.example.demo.Controllers;
 
 import com.example.demo.DTO.CreateEmployeeRequest;
 import com.example.demo.DTO.DeleteRequest;
-import com.example.demo.Models.Employee;
 import com.example.demo.Services.EmployeeServices;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @CrossOrigin("http://localhost:3030") // TODO: Dont hard Code this
@@ -19,7 +19,15 @@ public class EmployeeController {
     @Autowired
     private EmployeeServices employeeServices;
 
+    private static Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
+
+
+    @GetMapping
+    public ResponseEntity start(){
+        logger.info("Probe Verify");
+        return ResponseEntity.status(HttpStatus.OK).body("Probe Verified");
+    }
     @PostMapping("/createEmployee")
     public ResponseEntity createEmployee(@RequestBody CreateEmployeeRequest createEmployeeRequest){
         employeeServices.createEmployee(createEmployeeRequest);
