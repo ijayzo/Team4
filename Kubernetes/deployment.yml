@@ -87,12 +87,12 @@ spec:
           livenessProbe:
             initialDelaySeconds: 5
             httpGet:
-              path: /
+              path: /ready
               port: 3100
           readinessProbe:
             initialDelaySeconds: 5
             httpGet:
-              path: /
+              path: /ready
               port: 3100
 
 
