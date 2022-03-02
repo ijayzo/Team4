@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("auth")
-@CrossOrigin("http://localhost:3030") // TODO: Dont hard Code this
+@CrossOrigin("http://34.121.61.249:3030") // TODO: Dont hard Code this
 public class LoginController {
 
     @Autowired
