@@ -15,6 +15,9 @@ spec:
     spec:
       containers:
       - image: project2team4/java:latest
+        env:
+          - name: GRAFANA_URL
+            value: grafana://$(GRAFANA_SERVICE_HOST):$(GRAFANA_SERVICE_PORT_GRAFANA)
         imagePullPolicy: Always
         name: java
         ports: 
@@ -29,9 +32,6 @@ spec:
             httpGet:
               path: /actuator/health
               port: 8080
-        - env:
-           - name: GRAFANA_URL
-            - value : grafana://$(GRAFANA_SERVICE_HOST):$(GRAFANA_SERVICE_PORT_GRAFANA)
 
 ---
 apiVersion: apps/v1
