@@ -17,7 +17,7 @@ spec:
       - image: project2team4/java:latest
         env:
           - name: GRAFANA_URL
-            value: grafana://$(GRAFANA_SERVICE_HOST):$(GRAFANA_SERVICE_PORT_GRAFANA)
+            value: grafana://$(GRAFANA_SERVICE_HOST):$(GRAFANA_SERVICE_PORT)
         imagePullPolicy: Always
         name: java
         ports: 
