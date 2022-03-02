@@ -24,6 +24,10 @@ api:
   config:
     api2-url: ${GRAFANA_URL}
 
+react:
+  config:
+    url: ${REACT_URL}
+
 
 
 

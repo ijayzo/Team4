@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6f40458-40df-4a9e-b17a-a9048cf397d3" name="Changes" comment="" />
+    <list default="true" id="d6f40458-40df-4a9e-b17a-a9048cf397d3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/HotelPartnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/HotelPartnerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +138,8 @@
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.EmployeeTravelPackageApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <envs>
-        <env name="GRAFANA_URL" value="http://localhost:300" />
+        <env name="GRAFANA_URL" value="http://localhost:3000" />
+        <env name="REACT_URL" value="http://localhost:3030" />
       </envs>
       <method v="2">
         <option name="Make" enabled="true" />

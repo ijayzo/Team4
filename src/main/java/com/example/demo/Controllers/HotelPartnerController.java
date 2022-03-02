@@ -15,7 +15,7 @@ import java.util.List;
 
 
 @RestController
-@CrossOrigin("http://localhost:3030") // TODO: Dont hard Code this
+@CrossOrigin("${REACT_URL}") // TODO: Dont hard Code this
 @RequestMapping("/hotel")
 public class HotelPartnerController {
 
