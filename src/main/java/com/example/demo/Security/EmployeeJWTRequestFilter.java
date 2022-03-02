@@ -28,7 +28,7 @@ public class EmployeeJWTRequestFilter  extends OncePerRequestFilter {
     @Autowired
     private EmployeeUserDetailsService employeeUserDetailsService;
 
-    @Value("${api.config.api2-url: http://localhost:3000}")
+    @Value("${api.config.api2-url}")
     private String test;
 
     private static Logger logger = LoggerFactory.getLogger(EmployeeJWTRequestFilter.class);
