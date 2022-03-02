@@ -17,10 +17,17 @@ jwt:
   expiry:  360000
 
 
-
 server:
   port: 8080
 
 api:
   config:
     api2-url: ${}
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus
+
