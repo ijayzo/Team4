@@ -28,7 +28,7 @@ public class EmployeeJWTRequestFilter  extends OncePerRequestFilter {
     @Autowired
     private EmployeeUserDetailsService employeeUserDetailsService;
 
-    @Value("${api.config.api2-url}")
+    @Value("${react.config.url}")
     private String test;
 
     private static Logger logger = LoggerFactory.getLogger(EmployeeJWTRequestFilter.class);
