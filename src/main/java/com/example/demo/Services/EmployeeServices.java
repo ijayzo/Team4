@@ -42,7 +42,6 @@ public class EmployeeServices {
         employee.setPassword(encodedPassword);
         employee.setRole(createEmployeeRequest.getRole());
         logger.info("Service for creating a new Employee. Setting roles is included here as well");
-
         employeeRepository.save(employee);
     }
 
