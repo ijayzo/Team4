@@ -19,7 +19,7 @@ spec:
           - name: GRAFANA_URL
             value: grafana://$(GRAFANA_SERVICE_HOST):$(GRAFANA_SERVICE_PORT)
           - name: REACT_URL
-            value: react://$(REACT_SERVICE_HOST):$(REACT_SERVICE_PORT)
+            value: http://$(REACT_SERVICE_HOST):$(REACT_SERVICE_PORT)
         imagePullPolicy: Always
         name: javacontainer
         ports: 
