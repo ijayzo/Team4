@@ -21,7 +21,7 @@ spec:
           - name: REACT_URL
             value: react://$(REACT_SERVICE_HOST):$(REACT_SERVICE_PORT)
         imagePullPolicy: Always
-        name: javaC
+        name: javacontainer
         ports: 
         - containerPort: 8080
         livenessProbe:
