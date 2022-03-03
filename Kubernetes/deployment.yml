@@ -19,7 +19,7 @@ spec:
           - name: GRAFANA_URL
             value: grafana://$(GRAFANA_SERVICE_HOST):$(GRAFANA_SERVICE_PORT)
           - name: REACT_URL
-            value: http://$(REACT_SERVICE_HOST):$(REACT_SERVICE_PORT)
+            value: react://$(REACT_SERVICE_HOST):$(REACT_SERVICE_PORT)
         imagePullPolicy: Always
         name: java
         ports: 
@@ -94,7 +94,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: java-service
+  name: java
 spec:
   selector:
     app: java-deployment
@@ -153,7 +153,7 @@ metadata:
 spec:
   defaultBackend:
     service:
-      name: java-service
+      name: java
       port: 
         number: 8080
 
