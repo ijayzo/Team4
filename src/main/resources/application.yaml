@@ -17,16 +17,24 @@ jwt:
   expiry:  360000
 
 
-
 server:
   port: 8080
 
 api:
   config:
-    api2-url: ${}
+    api2-url: ${GRAFANA_URL}
+
+react:
+  config:
+    url: ${REACT_URL}
+
+
 
 management:
   endpoints:
     web:
       exposure:
         include: "health,info,metrics,prometheus"
+
+       
+

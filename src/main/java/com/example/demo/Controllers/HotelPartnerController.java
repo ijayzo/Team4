@@ -15,7 +15,7 @@ import java.util.List;
 
 
 @RestController
-@CrossOrigin("http://localhost:3030") // TODO: Dont hard Code this
+@CrossOrigin("${react.config.url}") // TODO: Dont hard Code this
 @RequestMapping("/hotel")
 public class HotelPartnerController {
 
@@ -26,7 +26,7 @@ public class HotelPartnerController {
         this.hotelPartnerServices = hotelPartnerServices;
     }
 
-    // TODO Dont want to use PathVariable, change please - for Richmond
+
     //get hotel by hotel id
     @GetMapping("/get")
     public ResponseEntity getHotelByHotelId(@RequestBody GetHotelPartnerIdRequest getHotelPartner){

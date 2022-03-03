@@ -27,7 +27,7 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$/../.." value="master" />
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="noel_newbranch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,6 +64,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="16" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers" />
@@ -144,10 +145,24 @@
     <configuration name="EmployeeTravelPackageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.EmployeeTravelPackageApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <envs>
+        <env name="GRAFANA_URL" value="http://localhost:3000" />
+        <env name="REACT_URL" value="http://localhost:3030" />
+      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.All in demo" />
+      <item itemvalue="JUnit.HotelControllerTest" />
+      <item itemvalue="JUnit.HotelServiceTest" />
+      <item itemvalue="JUnit.ReviewControllerTest" />
+      <item itemvalue="JUnit.ReviewServiceTest" />
+      <item itemvalue="Spring Boot.EmployeeTravelPackageApplication" />
+      <item itemvalue="Spring Boot.EmployeeTravelPackageApplication (1)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.EmployeeTravelPackageApplication" />
@@ -172,7 +187,7 @@
       <workItem from="1645773479082" duration="3160000" />
       <workItem from="1645841753003" duration="6558000" />
       <workItem from="1646180761109" duration="19000" />
-      <workItem from="1646183009103" duration="2433000" />
+      <workItem from="1646183009103" duration="10184000" />
     </task>
     <servers />
   </component>

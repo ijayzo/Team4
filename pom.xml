@@ -86,10 +86,11 @@
 			<artifactId>logback-classic</artifactId>
 		</dependency>
 
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-actuator</artifactId>
-			<version>2.6.4</version>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 <!--		Below dependency required for prometheus-->
 		<dependency>
@@ -97,10 +98,8 @@
 			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.22</version>
-			<scope>provided</scope>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
 
 

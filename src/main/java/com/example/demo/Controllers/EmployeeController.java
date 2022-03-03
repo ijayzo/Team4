@@ -10,9 +10,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
+/**
+ * Employee Controller
+ */
 @RestController
-@CrossOrigin("http://localhost:3030") // TODO: Dont hard Code this
+@CrossOrigin("${react.config.url}")
 @RequestMapping("/employee")
 public class EmployeeController {
 

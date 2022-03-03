@@ -15,18 +15,77 @@ spec:
     spec:
       containers:
       - image: project2team4/java:latest
+        env:
+          - name: GRAFANA_URL
+            value: grafana://$(GRAFANA_SERVICE_HOST):$(GRAFANA_SERVICE_PORT)
+          - name: REACT_URL
+            value: react://$(REACT_SERVICE_HOST):$(REACT_SERVICE_PORT)
         imagePullPolicy: Always
-        name: java
+        name: javacontainer
         ports: 
         - containerPort: 8080
         livenessProbe:
+            initialDelaySeconds: 5
             httpGet:
-              path: /employee
+              path: /actuator/health
               port: 8080
         readinessProbe:
+            initialDelaySeconds: 5
             httpGet:
-              path: /employee
+              path: /actuator/health
               port: 8080
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project2team4-deployment-grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana-deployment
+  template:
+    metadata:
+      labels:
+        app: grafana-deployment
+    spec:
+      containers:
+        - image: grafana/grafana:latest
+          imagePullPolicy: Always
+          name: grafana
+          ports:
+            - containerPort: 3000
+
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project2team4-deployment-loki
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: loki-deployment
+  template:
+    metadata:
+      labels:
+        app: loki-deployment
+    spec:
+      containers:
+        - image: grafana/loki:latest
+          imagePullPolicy: Always
+          name: loki
+          ports:
+            - containerPort: 3100
+          livenessProbe:
+            initialDelaySeconds: 5
+            httpGet:
+              path: /ready
+              port: 3100
+
 
 
 
@@ -34,13 +93,52 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: java-service
+  name: java
 spec:
   selector:
     app: java-deployment
   ports:
   - port: 8080
     targetPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: loki-service
+  name: loki
+  namespace: default
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "3100"
+      port: 3100
+      targetPort: 3100
+  selector:
+    app: loki-deployment
+
+
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: grafana-service
+  name: grafana
+  namespace: default
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "3000"
+      port: 3000
+      targetPort: 3000
+  selector:
+    app: grafana-deployment
+
 
 
 
@@ -54,7 +152,7 @@ metadata:
 spec:
   defaultBackend:
     service:
-      name: java-service
+      name: java
       port: 
         number: 8080
 
