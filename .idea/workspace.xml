@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d6f40458-40df-4a9e-b17a-a9048cf397d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/FlightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DemoApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +16,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -115,19 +114,11 @@
       <recent name="$PROJECT_DIR$/EmployeePackage" />
     </key>
   </component>
-
-  
-  <component name="RunManager" selected="Application.EmployeeTravelPackageApplication">
-    <configuration name="EmployeeTravelPackageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="GRAFANA_URL" value="http://localhost:3000" />
-        <env name="REACT_URL" value="http://localhost:3030" />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.EmployeeTravelPackageApplication" />
+  <component name="RunManager" selected="JUnit.All in demo">
+    <configuration name="All in demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FlightServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -191,25 +182,18 @@
       </method>
     </configuration>
     <list>
-
-
-      <item itemvalue="Application.EmployeeTravelPackageApplication" />
-      <item itemvalue="JUnit.All in demo" />
-      <item itemvalue="JUnit.HotelServiceTest" />
-      <item itemvalue="JUnit.ReviewControllerTest" />
-      <item itemvalue="JUnit.ReviewServiceTest" />
-      <item itemvalue="Spring Boot.EmployeeTravelPackageApplication" />
-      <item itemvalue="Spring Boot.EmployeeTravelPackageApplication (1)" />
       <item itemvalue="JUnit.FlightServiceTest.shouldDeleteById" />
       <item itemvalue="JUnit.FlightServiceTest.shouldReturnByRoute" />
       <item itemvalue="JUnit.FlightServiceTest.shouldReturnAll" />
-      <item itemvalue="JUnit.FlightServiceTest" />
       <item itemvalue="JUnit.ReviewServiceTest" />
+      <item itemvalue="Spring Boot.EmployeeTravelPackageApplication" />
+      <item itemvalue="Spring Boot.EmployeeTravelPackageApplication (1)" />
+      <item itemvalue="JUnit.All in demo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in demo" />
         <item itemvalue="JUnit.ReviewServiceTest" />
-        <item itemvalue="JUnit.FlightServiceTest" />
         <item itemvalue="JUnit.FlightServiceTest.shouldDeleteById" />
         <item itemvalue="JUnit.FlightServiceTest.shouldReturnAll" />
         <item itemvalue="JUnit.FlightServiceTest.shouldReturnByRoute" />
@@ -254,7 +238,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java</url>
           <line>25</line>
-          <properties class="com.example.demo.Services.EmployeeServices" method="createEmployee">
+          <properties class="com.example.demo.Services.EmployeeServices">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -263,7 +247,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java</url>
           <line>62</line>
-          <properties class="com.example.demo.Services.EmployeeServices" method="deleteEmployee">
+          <properties class="com.example.demo.Services.EmployeeServices">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
