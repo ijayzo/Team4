@@ -14,7 +14,7 @@ spec:
         app: java-deployment
     spec:
       containers:
-      - image: project2team4/java:lategit adst
+      - image: project2team4/java:latest
         env:
           - name: GRAFANA_URL
             value: grafana://$(GRAFANA_SERVICE_HOST):$(GRAFANA_SERVICE_PORT)
