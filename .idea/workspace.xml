@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d6f40458-40df-4a9e-b17a-a9048cf397d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/EmployeePackages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/EmployeePackages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeSecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/FlightController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +55,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -88,6 +86,10 @@
   </component>
   <component name="RunManager" selected="Application.EmployeeTravelPackageApplication">
     <configuration name="EmployeeTravelPackageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="GRAFANA_URL" value="http://localhost:3000" />
+        <env name="REACT_URL" value="http://localhost:3030" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="com.example.demo.EmployeeTravelPackageApplication" />
       <module name="demo" />
       <extension name="coverage">
@@ -155,8 +157,8 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.EmployeeTravelPackageApplication" />
       <item itemvalue="JUnit.All in demo" />
-      <item itemvalue="JUnit.HotelControllerTest" />
       <item itemvalue="JUnit.HotelServiceTest" />
       <item itemvalue="JUnit.ReviewControllerTest" />
       <item itemvalue="JUnit.ReviewServiceTest" />
