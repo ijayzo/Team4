@@ -1,6 +1,7 @@
 package com.example.demo.Services;
 
 
+import com.example.demo.Controllers.EmployeeController;
 import com.example.demo.DAO.EmployeeRepository;
 import com.example.demo.DTO.CreateEmployeeRequest;
 import com.example.demo.DTO.EmployeeResponse;
@@ -8,6 +9,8 @@ import com.example.demo.Exceptions.UserAlreadyExist;
 import com.example.demo.Exceptions.UserDoesNotExist;
 import com.example.demo.Models.Employee;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,7 +22,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class EmployeeServices {
-
+    private static Logger logger = LoggerFactory.getLogger(EmployeeServices.class);
     @Autowired
     private EmployeeRepository employeeRepository;
 
@@ -39,12 +42,13 @@ public class EmployeeServices {
         employee.setPassword(encodedPassword);
         employee.setRole(createEmployeeRequest.getRole());
 
+        logger.info("Service for creating a new Employee. Setting roles is included here as well");
 
         employeeRepository.save(employee);
     }
 
     public List<EmployeeResponse> getAllEmployee(){
-
+        logger.info("Service for getting all employees.");
         return employeeRepository.findAll().stream()
                 .filter(employee -> employee.isDeleted() == false)
                 .map(employee -> {
@@ -61,6 +65,7 @@ public class EmployeeServices {
     }
 
     public void deleteEmployee(int employeeId){
+        logger.info("Service for deleting an employee.");
         Optional<Employee> getEmployee = employeeRepository.getEmployeeByEmployeeId(employeeId);
         if(getEmployee.isPresent()){
             Employee employee = getEmployee.get();
@@ -68,12 +73,14 @@ public class EmployeeServices {
             employee.setDeleted(true);
             employeeRepository.save(employee);
         }else{
+            logger.info("Exception created in case user does not exist.");
             throw new UserDoesNotExist();
         }
     }
 
 
     private boolean isEmployeeExist(String username){
+        logger.info("Service for checking if Employee exists.");
         Optional<Employee> findEmployeeByUserName = employeeRepository.getEmployeeByUsername(username);
         return findEmployeeByUserName.isPresent() ? true : false;
     }

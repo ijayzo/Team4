@@ -17,6 +17,11 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Login Controller
+ * Mostly for front end, but also, for security.
+ * Will give permission based on roles/authorization to the other controllers/mappings.
+ */
 @RestController
 @RequestMapping("auth")
 @CrossOrigin("${react.config.url}") // TODO: Dont hard Code this

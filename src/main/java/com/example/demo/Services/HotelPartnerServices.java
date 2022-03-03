@@ -14,6 +14,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Hotel Service
+ * Dependent on authorization, allows one to get Hotels by Hotel ID, get all Hotels, create a hotel,
+ * and/or delete hotels by ID.
+ */
 @Service
 public class HotelPartnerServices {
 
@@ -65,6 +70,7 @@ public class HotelPartnerServices {
            hotelPartner.setIsDeleted(true);
            hotelPartnerRepository.save(hotelPartner);
        } else {
+           logger.error("Exception thrown if Hotel Partner is not found in database.");
            throw new HotelPartnerDoesNotExist();
        }
     }

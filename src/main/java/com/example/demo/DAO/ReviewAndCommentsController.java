@@ -50,7 +50,7 @@ public class ReviewAndCommentsController {
         if (reviewComment==null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-       reviewsServices.deleteReview(reviewComment);
+       reviewsServices.deleteReview(review_comment_id);
 
         return ResponseEntity.status(HttpStatus.OK).build();
     }

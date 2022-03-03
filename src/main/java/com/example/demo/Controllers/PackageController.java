@@ -7,6 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Packages Controller
+ * Able to get all Packages, create packages, and update packages.
+ * Also, having a specific package ID, one can delete or get that specific package.
+ */
 @RestController
 @RequestMapping("package")
 public class PackageController {
