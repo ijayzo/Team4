@@ -1,12 +1,15 @@
-
 import com.example.demo.DAO.HotelPartnerRepository;
+import com.example.demo.DTO.CreateHotelPartnerRequest;
 import com.example.demo.Models.HotelPartnerT;
 import com.example.demo.Services.HotelPartnerServices;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.*;
+import org.mockito.ArgumentCaptor;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Collections;
@@ -32,49 +35,25 @@ public class HotelServiceTest {
         MockitoAnnotations.openMocks(this);
         System.out.println("I am here");
     }
-    private HotelPartnerT newHotelPartner(){
-        HotelPartnerT hotelPartner = new HotelPartnerT();
-        hotelPartner.setId(20);
+    private CreateHotelPartnerRequest newHotelPartner(){
+        CreateHotelPartnerRequest hotelPartner = new CreateHotelPartnerRequest();
         hotelPartner.setHotelName("TestHotel");
-        hotelPartner.setIsDeleted(false);
         hotelPartner.setHotelLocation("Niceville");
         return hotelPartner;
     }
-//TODO: FIX this test case
-//    @Test
-//    public void saveTest(){
-//
-//        when(hotelPartnerRepository.save(any())).thenReturn(newHotelPartner());
-//        hotelPartnerServices.createHotelPartner(newHotelPartner());
-//
-//        ArgumentCaptor<HotelPartner> captureHotel = ArgumentCaptor.forClass(HotelPartner.class);
-//        verify(hotelPartnerRepository).save(captureHotel.capture());
-//
-//        HotelPartner hotel = captureHotel.getValue();
-//        Assert.assertEquals(Optional.ofNullable(hotel.getId()),Optional.ofNullable(20));
-//        Assert.assertEquals(Optional.ofNullable(hotel.getHotelName()),Optional.ofNullable("TestHotel"));
-//        Assert.assertEquals(Optional.ofNullable(hotel.getIsDeleted()),Optional.ofNullable(false));
-//        Assert.assertEquals(Optional.ofNullable(hotel.getHotelLocation()),Optional.ofNullable("Niceville"));
-//    }
+    @Test
+    public void saveTest(){
+        hotelPartnerServices.createHotelPartner(newHotelPartner());
 
+        ArgumentCaptor<HotelPartnerT> captureHotelPartner = ArgumentCaptor.forClass(HotelPartnerT.class);
 
-    //TODO: Fix this test case
+        verify(hotelPartnerRepository).save(captureHotelPartner.capture());
 
-//    @Test
-//    public void updateTest(){
-//
-//        when(hotelPartnerRepository.save(any())).thenReturn(newHotelPartner());
-//        hotelPartnerServices.createHotelPartner(newHotelPartner());
-//
-//        ArgumentCaptor<HotelPartner> captureHotel = ArgumentCaptor.forClass(HotelPartner.class);
-//        verify(hotelPartnerRepository).save(captureHotel.capture());
-//
-//        HotelPartner hotel = captureHotel.getValue();
-//        Assert.assertEquals(Optional.ofNullable(hotel.getId()),Optional.ofNullable(20));
-//        Assert.assertEquals(Optional.ofNullable(hotel.getHotelName()),Optional.ofNullable("TestHotel"));
-//        Assert.assertEquals(Optional.ofNullable(hotel.getIsDeleted()),Optional.ofNullable(false));
-//        Assert.assertEquals(Optional.ofNullable(hotel.getHotelLocation()),Optional.ofNullable("Niceville"));
-//    }
+        HotelPartnerT hotelPartnerT = captureHotelPartner.getValue();
+
+        Assert.assertEquals(hotelPartnerT.getHotelName(), "TestHotel");
+        Assert.assertEquals(hotelPartnerT.getHotelLocation(), "Niceville");
+    }
 
     @Test
     public void shouldReturnAllHotels() {
@@ -84,12 +63,31 @@ public class HotelServiceTest {
     }
 
     @Test
-    void getHotelByHotelId(){
+    public void getHotelByHotelId(){
 
         Optional<HotelPartnerT> hotel = hotelPartnerRepository.findById(20);
         Assert.assertEquals(Optional.ofNullable(newHotelPartner().getHotelName()), Optional.ofNullable("TestHotel"));
-        Assert.assertEquals(Optional.ofNullable(newHotelPartner().getIsDeleted()), Optional.ofNullable(false));
+//        Assert.assertEquals(Optional.ofNullable(newHotelPartner().getIsDeleted()), Optional.ofNullable(false));
         Assert.assertEquals(Optional.ofNullable(newHotelPartner().getHotelLocation()),  Optional.ofNullable("Niceville"));
     }
 
+    @Test
+    public void shouldDeleteHotelByHotelId(){
+        HotelPartnerT hotelPartnerT = new HotelPartnerT();
+        hotelPartnerT.setId(89);
+        hotelPartnerT.setHotelName("Delete");
+        hotelPartnerT.setHotelLocation("Somewhere too cold");
+//        hotelPartnerT.setIsDeleted(false);
+
+        when(hotelPartnerRepository.getHotelPartnerById(hotelPartnerT.getId())).thenReturn(Optional.of(hotelPartnerT));
+
+        hotelPartnerServices.deleteHotelPartner(hotelPartnerT.getId());
+
+        verify(hotelPartnerRepository).save(hotelPartnerT);
+
+        ArgumentCaptor<HotelPartnerT> captor = ArgumentCaptor.forClass(HotelPartnerT.class);
+        verify(hotelPartnerRepository).save(captor.capture());
+        Assert.assertEquals(captor.getValue().getId(), 89);
+
+    }
 }

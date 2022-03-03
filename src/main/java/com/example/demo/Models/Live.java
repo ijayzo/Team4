@@ -11,6 +11,17 @@ public class Live {
     private String speed_vertical;
     private String is_ground;
 
+    public Live(String updated, String latitude, String longitude, String altitude, String direction, String speed_horizontal, String speed_vertical, String is_ground) {
+        this.updated = updated;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.altitude = altitude;
+        this.direction = direction;
+        this.speed_horizontal = speed_horizontal;
+        this.speed_vertical = speed_vertical;
+        this.is_ground = is_ground;
+    }
+
     public Live() {
         super();
     }

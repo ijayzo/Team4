@@ -24,7 +24,7 @@ public class FlightServices {
 
     @Autowired
     FlightsAPIDataJPA flightApiDao;
-
+    //tested
     public List<FlightDBModel> getAll() {
         return flightApiDao.findAll();
     }
@@ -95,6 +95,7 @@ public class FlightServices {
      * @param to 3 letter IATA code for arrival airport
      * @return FlightList either populted from DB or from API
      */
+    //tested
     public List<FlightDBModel> getFlightsRoute(String from, String to) {
 
         //Check the DB First if the Information is available.  If yes return that
@@ -114,14 +115,15 @@ public class FlightServices {
      * @param from 3 letter IATA code for departure airport
      * @param to 3 letter IATA code for arrival airport
      */
+    //testing
     public void deleteFlightsRoute(String from, String to) {
         flightApiDao.deleteAllRoute(from.toUpperCase(), to.toUpperCase());
     }
-
+//tested
     public FlightDBModel getFlightByID(int id) {
         return flightApiDao.findById(id).get();
     }
-
+//tested
     public void deleteFlightByID(int id) {
         flightApiDao.deleteById(id);
     }
