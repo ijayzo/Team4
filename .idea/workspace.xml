@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6f40458-40df-4a9e-b17a-a9048cf397d3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/EmployeePackages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/EmployeePackages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Security/EmployeeSecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +47,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="25XfEeELRVLGeTaz2mDpcoHxqRM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -63,7 +67,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="16" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -71,25 +75,35 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Coding\Revature\Team4\Proj2Team4\src\main\java\com\example\demo\Controllers" />
+      <recent name="D:\Coding\Revature\Team4\Proj2Team4\src\main\java\com\example\demo\Services" />
+      <recent name="D:\Coding\Revature\Team4\Proj2Team4\src\main\java\com\example\demo\DAO" />
+      <recent name="D:\Coding\Revature\Team4\Proj2Team4\src\main\java\com\example\demo\Models" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/EmployeePackage" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.EmployeeTravelPackageApplication">
-    <configuration name="All in demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.EmployeeTravelPackageApplication">
+    <configuration name="EmployeeTravelPackageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.EmployeeTravelPackageApplication" />
       <module name="demo" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HotelControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HotelControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,11 +165,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EmployeeTravelPackageApplication" />
         <item itemvalue="JUnit.All in demo" />
         <item itemvalue="JUnit.ReviewServiceTest" />
         <item itemvalue="JUnit.ReviewControllerTest" />
         <item itemvalue="JUnit.HotelServiceTest" />
-        <item itemvalue="JUnit.HotelControllerTest" />
       </list>
     </recent_temporary>
   </component>

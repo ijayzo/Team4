@@ -52,6 +52,8 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .antMatchers("/employee/createEmployee").permitAll()
                 .antMatchers("/employee").permitAll()
                 .antMatchers("/actuator/**").permitAll()
+                .antMatchers("/package/**").permitAll() // TODO: Change this later one all mappings are completed
+                .antMatchers("/flights/**").permitAll() // TODO: Change this later one all mappings are completed
                .antMatchers("/employee/getAllEmployees").permitAll()//TODO: Restrict It From Employees
 
                 .anyRequest().authenticated();
