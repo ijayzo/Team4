@@ -24,12 +24,10 @@ public class ReviewAndCommentsController {
 
     //TODO: Change the PathVariable -- Richmond
     @GetMapping("/rev-by-package-id/{id}")
-    public ResponseEntity<?> getAllReviewsByPackageId(@PathVariable Integer employee_package_id){
-        AllReviewsDTO allReviews = reviewsServices.getAllReviewsByPackageID(employee_package_id);
+    public ResponseEntity<?> getAllReviewsByPackageId(@PathVariable int id){
+        AllReviewsDTO allReviews = reviewsServices.getAllReviewsByPackageID(id);
 
-        if(allReviews.getReviewDTOList().isEmpty()){
-            return ResponseEntity.status(404).build();
-        }
+
         return ResponseEntity.ok(allReviews);
     }
 

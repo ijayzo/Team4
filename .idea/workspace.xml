@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d6f40458-40df-4a9e-b17a-a9048cf397d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/FlightController.java" afterDir="false" />
     </list>
@@ -80,6 +81,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -113,8 +115,15 @@
       <recent name="$PROJECT_DIR$/EmployeePackage" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ReviewServiceTest">
-    <configuration name="FlightServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+
+  
+  <component name="RunManager" selected="Application.EmployeeTravelPackageApplication">
+    <configuration name="EmployeeTravelPackageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="GRAFANA_URL" value="http://localhost:3000" />
+        <env name="REACT_URL" value="http://localhost:3030" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.EmployeeTravelPackageApplication" />
       <module name="demo" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FlightServiceTest" />
@@ -182,6 +191,13 @@
       </method>
     </configuration>
     <list>
+
+
+      <item itemvalue="Application.EmployeeTravelPackageApplication" />
+      <item itemvalue="JUnit.All in demo" />
+      <item itemvalue="JUnit.HotelServiceTest" />
+      <item itemvalue="JUnit.ReviewControllerTest" />
+      <item itemvalue="JUnit.ReviewServiceTest" />
       <item itemvalue="Spring Boot.EmployeeTravelPackageApplication" />
       <item itemvalue="Spring Boot.EmployeeTravelPackageApplication (1)" />
       <item itemvalue="JUnit.FlightServiceTest.shouldDeleteById" />

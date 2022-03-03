@@ -59,8 +59,7 @@ public class FlightController {
     }
 
     @DeleteMapping("/deleteFlights/from/{from}/to/{to}")
-    public ResponseEntity deleteFlights(@PathVariable String from, @PathVariable String to,
-                                     @RequestHeader Map<String, String> headers) {
+    public ResponseEntity deleteFlights(@PathVariable String from, @PathVariable String to) {
 
         flightservice.deleteFlightsRoute(from,to);
 
