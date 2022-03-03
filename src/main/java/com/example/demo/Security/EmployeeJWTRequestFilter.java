@@ -58,7 +58,7 @@ public class EmployeeJWTRequestFilter  extends OncePerRequestFilter {
                 System.out.println(e.getStackTrace());
             }
         } else {
-            logger.debug("This is the URL " + test);
+            //logger.debug("This is the URL " + test);
             logger.warn("JWT does not begin with Bearer string on " + requestUrl);
         }
 
