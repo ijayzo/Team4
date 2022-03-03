@@ -58,7 +58,6 @@ spec:
             - containerPort: 3000
 
 
-
 ---
 
 apiVersion: apps/v1
