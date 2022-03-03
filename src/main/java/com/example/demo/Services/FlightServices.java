@@ -15,10 +15,14 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Flight Servoce class
+ * Holds the access key for the flight API.  Change this value if a new account is used.
+ */
 @Service
 public class FlightServices {
 
-    // This is the access key for the flight API.  Change this calue if a new account is used
+
     private String API_ACCESS_KEY = "2d617ef35f6b0a021fc170b01b98bc8f";
     private static Logger logger = LoggerFactory.getLogger(FlightServices.class);
 

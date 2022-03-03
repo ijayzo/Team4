@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6f40458-40df-4a9e-b17a-a9048cf397d3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/DTO/DeleteReviewCommentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Exceptions/ReviewCommentDoesNotExist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DAO/ReviewAndCommentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/DAO/ReviewAndCommentsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/Live.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Models/Live.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/FlightServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/FlightServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/ReviewServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/ReviewServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HotelControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HotelControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HotelServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HotelServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ReviewControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ReviewControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ReviewServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ReviewServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/FlightController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,22 +113,12 @@
       <recent name="$PROJECT_DIR$/EmployeePackage" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FlightServiceTest">
+  <component name="RunManager" selected="JUnit.ReviewServiceTest">
     <configuration name="FlightServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FlightServiceTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FlightServiceTest.getFlightById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FlightServiceTest" />
-      <option name="METHOD_NAME" value="getFlightById" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -171,6 +153,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ReviewServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ReviewServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EmployeeTravelPackageApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Proj2Team4" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.EmployeeTravelPackageApplication" />
@@ -194,18 +185,18 @@
       <item itemvalue="Spring Boot.EmployeeTravelPackageApplication" />
       <item itemvalue="Spring Boot.EmployeeTravelPackageApplication (1)" />
       <item itemvalue="JUnit.FlightServiceTest.shouldDeleteById" />
-      <item itemvalue="JUnit.FlightServiceTest.getFlightById" />
       <item itemvalue="JUnit.FlightServiceTest.shouldReturnByRoute" />
       <item itemvalue="JUnit.FlightServiceTest.shouldReturnAll" />
       <item itemvalue="JUnit.FlightServiceTest" />
+      <item itemvalue="JUnit.ReviewServiceTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReviewServiceTest" />
         <item itemvalue="JUnit.FlightServiceTest" />
         <item itemvalue="JUnit.FlightServiceTest.shouldDeleteById" />
         <item itemvalue="JUnit.FlightServiceTest.shouldReturnAll" />
         <item itemvalue="JUnit.FlightServiceTest.shouldReturnByRoute" />
-        <item itemvalue="JUnit.FlightServiceTest.getFlightById" />
       </list>
     </recent_temporary>
   </component>

@@ -13,7 +13,10 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
-
+/**
+ * Hotel Controller
+ * Able to get hotels by ID, get all hotels, post a new hotel partner, or delete a hotel partner.
+ */
 @RestController
 @CrossOrigin("${react.config.url}") // TODO: Dont hard Code this
 @RequestMapping("/hotel")

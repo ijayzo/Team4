@@ -11,7 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Flights Controller
+ * Able to get all flights.
+ * Able to access the FlightListAPI or an employee-accessible database for flights with FROM and TO locations, respectively, locations as URL mappings
+ * Able to get flights by FLight ID
+ * Able to delete flights by using the FROM and TO mapping, also.
+ */
 
 @RestController
 @RequestMapping("flights")

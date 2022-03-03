@@ -16,6 +16,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Review Services
+ * With the correct authorization, allows one to get view all reviews by package ID, create a review, get a review by
+ * review comment ID, and/or delete a review by review comment ID.
+ * Mainly seen on front end.
+ */
 @Service
 public class ReviewServices {
 

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * Employee Controller
+ * Able to get all employees, create a new employee, delete an employee.
  */
 @RestController
 @CrossOrigin("${react.config.url}")
