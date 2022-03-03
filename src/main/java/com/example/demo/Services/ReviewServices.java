@@ -36,6 +36,8 @@ public class ReviewServices {
         int generateID = Integer.parseInt(RandomStringUtils.randomNumeric(5));
         ReviewComments reviewComment = new ReviewComments();
         reviewComment.setReviewCommentId(generateID);
+        reviewComment.setEmployeeId(createReviewComment.getEmployeeId());
+        reviewComment.setEmployeePackageId(createReviewComment.getEmployeePackageId());
         reviewComment.setReviewComments(createReviewComment.getReviewComments());
         reviewComment.setReviewScore(createReviewComment.getReviewScore());
         reviewComment.setEmployeePackageId(createReviewComment.getEmployeePackageId());
