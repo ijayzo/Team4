@@ -45,6 +45,10 @@ public class EmployeeServices {
         employeeRepository.save(employee);
     }
 
+    /**
+     *
+     * @return a list of all Employee in the company
+     */
     public List<EmployeeResponse> getAllEmployee(){
         logger.info("Service for getting all employees.");
         return employeeRepository.findAll().stream()
