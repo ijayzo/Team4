@@ -123,8 +123,6 @@ spec:
     app: loki-deployment
 
 
-
-
 ---
 apiVersion: v1
 kind: Service
