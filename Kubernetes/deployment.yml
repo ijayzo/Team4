@@ -90,13 +90,19 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  labels:
+    app: java-service
   name: java
+  namespace: default
 spec:
+  type: LoadBalancer
+  ports:
+    - name: "8080"
+      port: 8080
+      targetPort: 8080
   selector:
     app: java-deployment
-  ports:
-  - port: 8080
-    targetPort: 8080
+
 
 ---
 
@@ -136,20 +142,6 @@ spec:
   selector:
     app: grafana-deployment
 
-
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: java-ingress-data
-  labels:
-    name: java-ingress
-spec:
-  defaultBackend:
-    service:
-      name: java
-      port:
-        number: 8080
 
 
 
