@@ -24,16 +24,7 @@ spec:
         name: javacontainer
         ports: 
         - containerPort: 8080
-        livenessProbe:
-            initialDelaySeconds: 6
-            httpGet:
-              path: /actuator/health
-              port: 8080
-        readinessProbe:
-            initialDelaySeconds: 6
-            httpGet:
-              path: /actuator/health
-              port: 8080
+
 
 ---
 apiVersion: apps/v1

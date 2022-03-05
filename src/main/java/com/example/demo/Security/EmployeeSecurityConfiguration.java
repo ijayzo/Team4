@@ -50,7 +50,7 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST,"/auth/**").permitAll()
                 .antMatchers("/employee/createEmployee").permitAll()
-                .antMatchers("/employee").permitAll()
+                .antMatchers("/employee/**").permitAll()
                 .antMatchers("/actuator/**").permitAll()
                 .antMatchers("/package/**").permitAll() // TODO: Change this later one all mappings are completed
                 .antMatchers("/flights/**").permitAll() // TODO: Change this later one all mappings are completed
