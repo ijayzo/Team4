@@ -31,7 +31,7 @@ public class HotelPartnerController {
 
 
     //get hotel by hotel id
-    @GetMapping("/get")
+    @PostMapping("/get")
     public ResponseEntity getHotelByHotelId(@RequestBody GetHotelPartnerIdRequest getHotelPartner){
         return ResponseEntity.ok( hotelPartnerServices.getHotelByHotelId(getHotelPartner.getHotelPartnerId()));
     }

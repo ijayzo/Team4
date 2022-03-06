@@ -1,5 +1,7 @@
 package com.example.demo.Controllers;
 
+import com.example.demo.DTO.createPackageRequest;
+import com.example.demo.DTO.getPackageByPackageIdRequest;
 import com.example.demo.Models.EmployeePackages;
 import com.example.demo.Services.PackageServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("package")
+@CrossOrigin("${react.config.url}")
 public class PackageController {
 
     @Autowired
@@ -31,33 +34,40 @@ public class PackageController {
      * @return
      */
     @PostMapping("/createPackage")
-    public ResponseEntity createPackage(@RequestBody EmployeePackages newEmployeePackage){
-        newEmployeePackage.setEmployeePackageId(0);
+    public ResponseEntity createPackage(@RequestBody createPackageRequest newEmployeePackage){
         thePackageService.save(newEmployeePackage);
         return ResponseEntity.accepted().build();
     }
 
     @PatchMapping("/updatePackage")
     public ResponseEntity updatePackage(@RequestBody EmployeePackages newEmployeePackage){
-        thePackageService.save(newEmployeePackage);
+        thePackageService.update(newEmployeePackage);
         return ResponseEntity.accepted().build();
     }
 
-    @GetMapping("/getOnePackage/{packageID}")
-    public ResponseEntity getOnePackage(@PathVariable int packageID){
-        EmployeePackages thePackage = thePackageService.getPackageByID(packageID);
+    @GetMapping("/getAll")
+        public ResponseEntity getAll(){
+        return ResponseEntity.status(HttpStatus.OK).body(thePackageService.getAll());
+
+        }
+
+
+
+    @PostMapping("/getOnePackage")
+    public ResponseEntity getOnePackage(@RequestBody getPackageByPackageIdRequest getPackageByPackageIdRequest){
+        EmployeePackages thePackage = thePackageService.getPackageByID(getPackageByPackageIdRequest.getPackageId());
         return ResponseEntity.status(HttpStatus.OK)
                 .body(thePackage);
     }
 
-    @DeleteMapping("/deletePackage/{packageID}")
-    public ResponseEntity deletePackage(@PathVariable int packageID) {
-        EmployeePackages thePackage = thePackageService.getPackageByID(packageID);
+    @PostMapping("/deletePackage")
+    public ResponseEntity deletePackage(@RequestBody getPackageByPackageIdRequest getPackageByPackageIdRequest) {
+        EmployeePackages thePackage = thePackageService.getPackageByID(getPackageByPackageIdRequest.getPackageId());
         if (thePackage==null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         thePackage.setDeleted(true);
-        thePackageService.save(thePackage);
+        thePackageService.delete(thePackage);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 

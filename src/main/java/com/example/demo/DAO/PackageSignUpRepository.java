@@ -10,6 +10,6 @@ import java.util.Optional;
 @Repository
 public interface PackageSignUpRepository extends JpaRepository<PackageSignUp, Integer> {
     List<PackageSignUp> findPackageSignUpByPackageId(int packageId);
-    List<PackageSignUp> findPackageSignUpByEmployeeId(int employeeId);
+    List<PackageSignUp> findPackageSignUpByUsername(String username);
     Optional<PackageSignUp> findPackageSignUpByPackageSignUpId(int packageSignUpId);
 }

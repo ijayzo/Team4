@@ -7,7 +7,9 @@ import java.util.Date;
 @Data
 public class PackageSignUpRequest {
 
-    private int employeeId;
     private int packageId;
+    private String username;
+    private int flightId;
+    private int hotelId;
 
 }

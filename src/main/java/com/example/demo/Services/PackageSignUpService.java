@@ -28,9 +28,11 @@ public class PackageSignUpService {
     public void create(PackageSignUpRequest packageSignUpRequest){
         logger.info("Creating a new PackageSignUp");
         PackageSignUp packageSignUp = new PackageSignUp();
-        packageSignUp.setEmployeeId(packageSignUpRequest.getEmployeeId());
+        packageSignUp.setUsername(packageSignUpRequest.getUsername());
+        packageSignUp.setFlightId(packageSignUpRequest.getFlightId());
         packageSignUp.setSignUpDate(new Date());
         packageSignUp.setPackageId(packageSignUpRequest.getPackageId());
+        packageSignUp.setHotelId(packageSignUpRequest.getHotelId());
         packageSignUp.setDeleted(false);
 
         packageSignUpRepository.save(packageSignUp);
@@ -46,8 +48,8 @@ public class PackageSignUpService {
 
     }
 
-    public List<PackageSignUp> getAllPackageByEmployee(int packageId){
-        return packageSignUpRepository.findPackageSignUpByEmployeeId(packageId).stream()
+    public List<PackageSignUp> getAllPackageByEmployee(String username){
+        return packageSignUpRepository.findPackageSignUpByUsername(username).stream()
                 .filter(packageSignUp -> packageSignUp.isDeleted() == false)
                 .collect(Collectors.toList());
     }

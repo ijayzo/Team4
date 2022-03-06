@@ -16,8 +16,10 @@ public class PackageSignUp {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private int packageSignUpId;
-    private int employeeId;
+    private String username;
     private int packageId;
+    private int hotelId;
+    private int flightId;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date signUpDate;

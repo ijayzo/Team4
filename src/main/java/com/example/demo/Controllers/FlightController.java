@@ -1,5 +1,7 @@
 package com.example.demo.Controllers;
 
+import com.example.demo.DTO.getDirectFromFlightRequest;
+import com.example.demo.DTO.getFlightByIdRequest;
 import com.example.demo.Models.FlightDBModel;
 import com.example.demo.Models.FlightList;
 import com.example.demo.Services.FlightServices;
@@ -21,6 +23,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("flights")
+@CrossOrigin("${react.config.url}")
 public class FlightController {
 
     @Autowired
@@ -31,33 +34,33 @@ public class FlightController {
         return ResponseEntity.status(HttpStatus.OK).body(flightservice.getAll());
     }
 
-    @GetMapping("/getDirectFromAPI/from/{from}/to/{to}")
-    public ResponseEntity getFromAPI(@PathVariable String from, @PathVariable String to,
-                                     @RequestHeader Map<String, String> headers) {
+    @PostMapping("/getDirectFromAPI")
+    public ResponseEntity getFromAPI(@RequestBody getDirectFromFlightRequest getDirectFromFlightRequest) {
 
-        FlightList flights = flightservice.getTestFlightsfromAPI(from,to);
+        FlightList flights = flightservice.getTestFlightsfromAPI(getDirectFromFlightRequest.getFrom(),getDirectFromFlightRequest.getTo());
 
         return ResponseEntity.status(HttpStatus.OK).body(flights);
 
     }
 
-    @GetMapping("/getFlights/from/{from}/to/{to}")
-    public ResponseEntity getFlights(@PathVariable String from, @PathVariable String to,
-                                     @RequestHeader Map<String, String> headers) {
+    @PostMapping("/getFlights")
+    public ResponseEntity getFlights(@RequestBody getDirectFromFlightRequest getDirectFromFlightRequest
+                                  ) {
 
-        List<FlightDBModel> theFlightList = flightservice.getFlightsRoute(from,to);
+        List<FlightDBModel> theFlightList = flightservice.getFlightsRoute(getDirectFromFlightRequest.getFrom(),getDirectFromFlightRequest.getTo());
 
         return ResponseEntity.status(HttpStatus.OK).body(theFlightList);
 
     }
-
-    @GetMapping("/getOneFlight/{flightID}")
-    public ResponseEntity getOneFlight(@PathVariable int flightID){
-        FlightDBModel theFlight = flightservice.getFlightByID(flightID);
+    //TODO:DO i need this
+    @GetMapping("/getOneFlight")
+    public ResponseEntity getOneFlight(@RequestBody getFlightByIdRequest flightRequest){
+        FlightDBModel theFlight = flightservice.getFlightByID(flightRequest.getFlightId());
         return ResponseEntity.status(HttpStatus.OK)
                 .body(theFlight);
     }
 
+    //TODO: DO i need this
     @DeleteMapping("/deleteFlights/from/{from}/to/{to}")
     public ResponseEntity deleteFlights(@PathVariable String from, @PathVariable String to) {
 
