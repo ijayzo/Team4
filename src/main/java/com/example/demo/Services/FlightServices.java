@@ -123,9 +123,10 @@ public class FlightServices {
     public void deleteFlightsRoute(String from, String to) {
         flightApiDao.deleteAllRoute(from.toUpperCase(), to.toUpperCase());
     }
+
 //tested
     public FlightDBModel getFlightByID(int id) {
-        return flightApiDao.findById(id).get();
+        return  flightApiDao.findById(id).get();
     }
 //tested
     public void deleteFlightByID(int id) {

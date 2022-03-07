@@ -52,8 +52,8 @@ public class FlightController {
         return ResponseEntity.status(HttpStatus.OK).body(theFlightList);
 
     }
-    //TODO:DO i need this
-    @GetMapping("/getOneFlight")
+
+    @PostMapping("/getOneFlight")
     public ResponseEntity getOneFlight(@RequestBody getFlightByIdRequest flightRequest){
         FlightDBModel theFlight = flightservice.getFlightByID(flightRequest.getFlightId());
         return ResponseEntity.status(HttpStatus.OK)

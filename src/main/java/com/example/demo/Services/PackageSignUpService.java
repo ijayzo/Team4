@@ -57,7 +57,7 @@ public class PackageSignUpService {
     public void deletePackage(int packageSignUpId){
         Optional<PackageSignUp> getSignUp = packageSignUpRepository.findPackageSignUpByPackageSignUpId(packageSignUpId);
         if(getSignUp.isPresent()){
-            PackageSignUp packageSignUp = new PackageSignUp();
+            PackageSignUp packageSignUp = getSignUp.get();
             packageSignUp.setDeleted(true);
             packageSignUpRepository.save(packageSignUp);
             logger.info("PackageSignUp Successfully Deleted");

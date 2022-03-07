@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Service Implementation for Employee_Package methods using the EmployeePackageDataJPA Implementation
@@ -44,7 +45,9 @@ public class PackageServices {
     }
 
     public List<EmployeePackages> getAll() {
-        return empPackageDao.findAll();
+        return empPackageDao.findAll().stream()
+                .filter(packages -> packages.isDeleted() == false)
+                .collect(Collectors.toList());
     }
 
     public EmployeePackages getPackageByID(int id) {
