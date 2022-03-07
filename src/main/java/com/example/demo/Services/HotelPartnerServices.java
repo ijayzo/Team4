@@ -48,6 +48,7 @@ public class HotelPartnerServices {
     }
 
     public List<HotelPartnerT> getAllHotels(){
+        logger.info("Retrieving All Data For Hotels");
        return hotelPartnerRepository.findAll().stream()
                .filter( hotelPartner -> hotelPartner.getIsDeleted() == false)
                .collect(Collectors.toList());
@@ -60,6 +61,7 @@ public class HotelPartnerServices {
         hotelPartner.setHotelName(createHotelPartner.getHotelName());
         int generateID = Integer.parseInt(RandomStringUtils.randomNumeric(6));
         hotelPartner.setId(generateID);
+        logger.info("Creating Hotel Partner");
         hotelPartnerRepository.save(hotelPartner);
     }
 
@@ -69,6 +71,7 @@ public class HotelPartnerServices {
            HotelPartnerT hotelPartner = partner.get();
            hotelPartner.setIsDeleted(true);
            hotelPartnerRepository.save(hotelPartner);
+           logger.info("Successfully Deleted Hotel Partner");
        } else {
            logger.error("Exception thrown if Hotel Partner is not found in database.");
            throw new HotelPartnerDoesNotExist();

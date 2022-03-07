@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
 import java.util.List;
@@ -20,6 +21,12 @@ public class PackageSignUpService {
 
     @Autowired
     private PackageSignUpRepository packageSignUpRepository;
+
+    @Autowired
+    private RestTemplate  restTemplate;
+
+    @Autowired
+    private MailSender mailSender;
 
     private static Logger logger = LoggerFactory.getLogger(PackageSignUpService.class);
 
@@ -34,6 +41,8 @@ public class PackageSignUpService {
         packageSignUp.setPackageId(packageSignUpRequest.getPackageId());
         packageSignUp.setHotelId(packageSignUpRequest.getHotelId());
         packageSignUp.setDeleted(false);
+
+        mailSender.createdPackage(packageSignUp);
 
         packageSignUpRepository.save(packageSignUp);
         logger.info("PackageSignUp Successfully");

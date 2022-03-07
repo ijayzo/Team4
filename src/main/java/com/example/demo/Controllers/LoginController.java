@@ -2,6 +2,7 @@ package com.example.demo.Controllers;
 
 import com.example.demo.DTO.LoginRequest;
 import com.example.demo.DTO.LoginResponse;
+import com.example.demo.Exceptions.WrongCredentials;
 import com.example.demo.Security.EmployeeJWT;
 import com.example.demo.Security.EmployeeUserDetailsService;
 import org.slf4j.Logger;
@@ -44,11 +45,11 @@ public class LoginController {
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> generateToken(@RequestBody LoginRequest loginRequest) throws Exception {
         authenticate(loginRequest.getUsername(), loginRequest.getPassword());
-        System.out.println("Group test");
         final UserDetails userDetails = employeeUserDetailsService.loadUserByUsername(loginRequest.getUsername());
         final String token = employeeJWT.generateToken(userDetails);
       String getUsername = userDetails.getAuthorities().stream().findFirst().get().toString();
        String username = getUsername == null ? "" : getUsername;
+       logger.debug("Authenticated username %s",username);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(new LoginResponse( userDetails.getUsername(), username, token));
     }
@@ -63,7 +64,7 @@ public class LoginController {
             logger.error("User not active");
         } catch (BadCredentialsException be) {
             logger.error("Invalid Credential " + be);
-            throw new Exception("Invalid credentials", be);
+            throw new WrongCredentials();
         }
     }
 }

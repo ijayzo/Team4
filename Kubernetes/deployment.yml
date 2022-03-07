@@ -18,6 +18,8 @@ spec:
         env:
           - name: REACT_URL
             value: http://34.70.19.242:3030
+          - name: EMAIL_URL
+            value: http://35.202.206.24:8070
         imagePullPolicy: Always
         name: javacontainer
         ports: 

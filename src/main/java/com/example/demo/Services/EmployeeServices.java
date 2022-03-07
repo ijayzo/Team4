@@ -26,12 +26,17 @@ public class EmployeeServices {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    @Autowired
+    private MailSender mailSender;
+
     public void createEmployee(CreateEmployeeRequest createEmployeeRequest){
         Employee employee = new Employee();
         int generateEmployeeId = Integer.parseInt(RandomStringUtils.randomNumeric(8));
         if(isEmployeeExist(createEmployeeRequest.getUsername())){
+            logger.debug("User Already Exist in the Database");
             throw new UserAlreadyExist();
         }
+
         employee.setEmployeeId(generateEmployeeId);
         employee.setEmail(createEmployeeRequest.getEmail());
         employee.setFirstName(createEmployeeRequest.getFirstName());
@@ -43,6 +48,7 @@ public class EmployeeServices {
         employee.setRole(createEmployeeRequest.getRole());
         logger.info("Service for creating a new Employee. Setting roles is included here as well");
         employeeRepository.save(employee);
+        logger.info("Employee Created Successfully");
     }
 
     /**
@@ -70,6 +76,7 @@ public class EmployeeServices {
         logger.info("Service for deleting an employee.");
         Optional<Employee> getEmployee = employeeRepository.getEmployeeByEmployeeId(employeeId);
         if(getEmployee.isPresent()){
+            logger.info("User is Present");
             Employee employee = getEmployee.get();
             System.out.println(employee.getFirstName());
             employee.setDeleted(true);

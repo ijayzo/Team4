@@ -3,6 +3,8 @@ package com.example.demo.Services;
 import com.example.demo.DAO.EmployeePackageDataJPA;
 import com.example.demo.DTO.createPackageRequest;
 import com.example.demo.Models.EmployeePackages;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +24,10 @@ public class PackageServices {
         empPackageDao = theEmpPackageDao;
     }
 
+    private static Logger logger = LoggerFactory.getLogger(PackageServices.class);
+
     public void save(createPackageRequest thePackage){
+        logger.info("Creating  a new Package");
         EmployeePackages employeePackages = new EmployeePackages();
         employeePackages.setPackageCost(thePackage.getPackageCost());
         employeePackages.setPackageDays(thePackage.getPackageDays());
@@ -33,7 +38,7 @@ public class PackageServices {
         employeePackages.setTotalPackageSignUp(thePackage.getTotalPackageSignUp());
         employeePackages.setTravelDestination(thePackage.getTravelDestination());
         employeePackages.setDeleted(false);
-
+        logger.info("Successfully Created Package");
 
 
         empPackageDao.save(employeePackages);
@@ -45,6 +50,7 @@ public class PackageServices {
     }
 
     public List<EmployeePackages> getAll() {
+        logger.info("Getting all package");
         return empPackageDao.findAll().stream()
                 .filter(packages -> packages.isDeleted() == false)
                 .collect(Collectors.toList());

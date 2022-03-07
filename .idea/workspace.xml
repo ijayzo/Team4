@@ -6,11 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d6f40458-40df-4a9e-b17a-a9048cf397d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/FlightController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/DAO/FlightsAPIDataJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/DAO/FlightsAPIDataJPA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/FlightServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/FlightServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/HotelPartnerServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/HotelPartnerServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/PackageServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/PackageServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/PackageSignUpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/PackageSignUpService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +120,7 @@
       <recent name="$PROJECT_DIR$/EmployeePackage" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.EmployeeTravelPackageApplication">
+  <component name="RunManager" selected="JUnit.All in demo">
     <configuration name="All in demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <option name="PACKAGE_NAME" value="" />
@@ -180,6 +182,7 @@
       <envs>
         <env name="GRAFANA_URL" value="http://localhost:3000" />
         <env name="REACT_URL" value="http://localhost:3030" />
+        <env name="EMAIL_URL" value="http://localhost:8070" />
       </envs>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -190,9 +193,9 @@
       <item itemvalue="JUnit.FlightServiceTest.shouldReturnByRoute" />
       <item itemvalue="JUnit.FlightServiceTest.shouldReturnAll" />
       <item itemvalue="JUnit.ReviewServiceTest" />
+      <item itemvalue="JUnit.All in demo" />
       <item itemvalue="Spring Boot.EmployeeTravelPackageApplication" />
       <item itemvalue="Spring Boot.EmployeeTravelPackageApplication (1)" />
-      <item itemvalue="JUnit.All in demo" />
     </list>
     <recent_temporary>
       <list>
@@ -219,6 +222,8 @@
       <workItem from="1645841753003" duration="6558000" />
       <workItem from="1646180761109" duration="19000" />
       <workItem from="1646183009103" duration="10184000" />
+      <workItem from="1646634086968" duration="27000" />
+      <workItem from="1646634140004" duration="2638000" />
     </task>
     <servers />
   </component>
@@ -250,7 +255,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java</url>
-          <line>64</line>
+          <line>70</line>
           <properties class="com.example.demo.Services.EmployeeServices">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

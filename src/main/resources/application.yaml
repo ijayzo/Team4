@@ -28,6 +28,9 @@ react:
   config:
     url: ${REACT_URL}
 
+email:
+  config:
+    url: ${EMAIL_URL}
 
 
 management:
