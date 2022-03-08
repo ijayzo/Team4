@@ -45,9 +45,8 @@ public class EmployeeJWTRequestFilter  extends OncePerRequestFilter {
 
         if(requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
             token = requestTokenHeader.substring(7);
-            logger.info("Token is present " + token);
+            logger.info("Token is present " +  token);
             try {
-                System.out.println("Was is going on");
                 username = employeeJWT.getUsernameFromToken(token);
             } catch (IllegalArgumentException ae) {
                 logger.debug("Unable to get token");
