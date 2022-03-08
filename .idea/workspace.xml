@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d6f40458-40df-4a9e-b17a-a9048cf397d3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/MailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Services/MailSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/EmployeeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EmployeeServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +217,7 @@
       <workItem from="1646183009103" duration="10184000" />
       <workItem from="1646634086968" duration="27000" />
       <workItem from="1646634140004" duration="10633000" />
-      <workItem from="1646703165250" duration="1651000" />
+      <workItem from="1646703165250" duration="2769000" />
     </task>
     <servers />
   </component>
