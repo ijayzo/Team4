@@ -37,22 +37,23 @@ public class EmployeeUserDetails implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return  employee.isDeleted() == true ? false : true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
 
-        return true;
+        return  employee.isDeleted() == true ? false : true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+        return  employee.isDeleted() == true ? false : true;
     }
 
     @Override
     public boolean isEnabled() {
-        return true;
+       return  employee.isDeleted() == true ? false : true;
+
     }
 }

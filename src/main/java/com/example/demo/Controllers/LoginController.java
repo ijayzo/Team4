@@ -49,7 +49,7 @@ public class LoginController {
         final String token = employeeJWT.generateToken(userDetails);
       String getUsername = userDetails.getAuthorities().stream().findFirst().get().toString();
        String username = getUsername == null ? "" : getUsername;
-       logger.debug("Authenticated username %s",username);
+       logger.debug("Authenticated username"+ username);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(new LoginResponse( userDetails.getUsername(), username, token));
     }
