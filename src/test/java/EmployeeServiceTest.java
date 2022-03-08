@@ -5,6 +5,7 @@ import com.example.demo.DTO.Roles;
 import com.example.demo.Models.Employee;
 import com.example.demo.Models.HotelPartnerT;
 import com.example.demo.Services.EmployeeServices;
+import com.example.demo.Services.MailSender;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -23,6 +25,10 @@ public class EmployeeServiceTest {
     private EmployeeRepository employeeRepository;
     @InjectMocks
     private EmployeeServices employeeServices;
+
+    @Mock
+    private MailSender mailSender;
+
     @Before
     public void setUp(){
         MockitoAnnotations.openMocks(this);
@@ -75,7 +81,7 @@ public class EmployeeServiceTest {
 //    create
     @Test
     public void saveTest(){
-//        when(employeeRepository.save(any())).thenReturn(newEmployee());
+    when(mailSender.createdEmployee(any())).thenReturn("");
         employeeServices.createEmployee(newEmployee());
 
         ArgumentCaptor<Employee> captureEmployee = ArgumentCaptor.forClass(Employee.class);

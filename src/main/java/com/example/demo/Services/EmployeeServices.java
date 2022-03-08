@@ -47,6 +47,8 @@ public class EmployeeServices {
         employee.setPassword(encodedPassword);
         employee.setRole(createEmployeeRequest.getRole());
         logger.info("Service for creating a new Employee. Setting roles is included here as well");
+        mailSender.createdEmployee(employee);
+
         employeeRepository.save(employee);
         logger.info("Employee Created Successfully");
     }
@@ -91,6 +93,14 @@ public class EmployeeServices {
     private boolean isEmployeeExist(String username){
         logger.info("Service for checking if Employee exists.");
         Optional<Employee> findEmployeeByUserName = employeeRepository.getEmployeeByUsername(username);
-        return findEmployeeByUserName.isPresent() ? true : false;
+        if(findEmployeeByUserName.isPresent()){
+            Employee employee = findEmployeeByUserName.get();
+            if(employee.isDeleted()){
+                return false;
+            }else {
+                return true;
+            }
+        }
+        return false;
     }
 }

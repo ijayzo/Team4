@@ -34,7 +34,7 @@ public class MailSender {
 
 
 
-    public void createdPackage(PackageSignUp packageSignUp){
+    public String createdPackage(PackageSignUp packageSignUp){
         Optional<Employee> employees = employeeRepository.getEmployeeByUsername(packageSignUp.getUsername());
         Optional<EmployeePackages> packages = employeePackageDataJPA.findById(packageSignUp.getPackageId());
 
@@ -51,19 +51,24 @@ public class MailSender {
             logger.error("User Does Not Exist ");
         }
 
+        return null;
+
 
 
 
     }
 
 
-    public void createdEmployee(Employee employee){
+    public String createdEmployee(Employee employee){
+        logger.debug("Sending Employee");
             MailSenderCreatePackage mailSenderCreate = new MailSenderCreatePackage();
             mailSenderCreate.setUsername(employee.getUsername());
             mailSenderCreate.setEmail(employee.getEmail());
 
             restTemplate.postForEntity(emailUrl+"/mailapi/createdEmployee", mailSenderCreate, null);
             logger.info("Information sent to EmailAPI");
+
+            return "";
 
 
     }

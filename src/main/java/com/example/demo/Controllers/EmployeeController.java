@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @CrossOrigin("${react.config.url}")
-@RequestMapping("/employee")
+@RequestMapping("employee")
 public class EmployeeController {
 
     @Autowired

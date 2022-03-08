@@ -71,6 +71,17 @@ pipeline {
                         ])
       }
     }
+    stage("Clean Jenkins Pipeline") {
+        when {
+            branch master
+        }
+        steps {
+            cleanWs()
+        }
+
+
+
+    }
 
   }
   environment {
