@@ -42,6 +42,19 @@ spec:
       targetPort: 8080
   selector:
     app: java-deployment
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: java-service-monitor
+spec:
+  selector:
+    matchLabels:
+      app: java-deployment
+  endpoints:
+    - port: http-app1
+      path: "/actuator/prometheus"
+
 
 
 

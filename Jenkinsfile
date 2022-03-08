@@ -59,7 +59,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        timeout(time: 2, unit: 'MINUTES') {
+                        timeout(time: 1, unit: 'MINUTES') {
                             approved = input message: 'Deploy to production?', ok: 'Continue',
                                                parameters: [choice(name: 'approved', choices: 'Yes\nNo', description: 'Deploy build to production')]
                             if(approved != 'Yes') {
