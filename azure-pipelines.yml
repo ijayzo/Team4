@@ -13,6 +13,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: CmdLine@2
+  inputs:
+    script: 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=azure-proj2-test'
+    workingDirectory: 'Proj2Team4'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -56,3 +60,4 @@ steps:
 #         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
 #         tags: |
 #           $(tag)
+
