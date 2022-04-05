@@ -25,7 +25,7 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=azure-proj2-test'
-    workingDirectory: '.'
+    workingDirectory: 'Proj2Team4'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -36,13 +36,6 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- task: Maven@3
-  displayName: Build Docker image
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'spring-boot:build-image'
-    publishJUnitResults: false
-    jdkVersionOption: '1.11'
 # - task: Maven@3
 #   displayName: Build Docker image
 #   inputs:
@@ -50,3 +43,9 @@ steps:
 #     goals: 'spring-boot:build-image'
 #     publishJUnitResults: false
 #     jdkVersionOption: '1.11'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'isaiasdocker'
+    repository: 'ijayzo/azuretest'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
