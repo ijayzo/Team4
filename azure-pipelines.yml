@@ -49,3 +49,155 @@ steps:
     repository: 'ijayzo/azuretest'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+---
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+- main
+
+resources:
+- repo: self
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  cloned_project_key: 'cloned-azure-test'
+  sonar_cloud_organization: 'ij-proj2-azure-test'
+  jdk_version_maven_build: '1.8'
+  jdk_sonar_maven: '1.11'
+  docker_repo: 'ijayzo/azuretest'
+
+stages:
+- stage: MvnAndSonar 
+  jobs: 
+  - job: MvnAndSonar
+    
+
+steps:
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'sonarclud-azure'
+    organization: $(sonar_cloud_organization)
+    scannerMode: 'MSBuild'
+    projectKey: $(cloned_project_key)
+    projectName: 'does-this-matter'
+- task: CmdLine@2
+  inputs:
+    script: 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=$(cloned_project_key)'
+    workingDirectory: '.'
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: $(jdk_version_maven_build)
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
+- task: Maven@3
+  displayName: Maven Sonar
+  inputs:
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: false
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: $(jdk_sonar_maven)
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: 'latest'
+    goals: 'sonar:sonar'
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'isaiasdocker'
+    repository: $(docker_repo)
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+
+
+---
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+- main
+
+resources:
+- repo: self
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  cloned_project_key: 'cloned-azure-test'
+  sonar_cloud_organization: 'ij-proj2-azure-test'
+  jdk_version_maven_build: '1.8'
+  jdk_sonar_maven: '1.11'
+  docker_repo: 'ijayzo/azuretest'
+
+steps:
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'sonarclud-azure'
+    organization: $(sonar_cloud_organization)
+    scannerMode: 'MSBuild'
+    projectKey: $(cloned_project_key)
+    projectName: 'does-this-matter'
+- task: CmdLine@2
+  inputs:
+    script: 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=$(cloned_project_key)'
+    workingDirectory: '.'
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: $(jdk_version_maven_build)
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
+- task: Maven@3
+  displayName: Maven Sonar
+  inputs:
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: false
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: $(jdk_sonar_maven)
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: 'latest'
+    goals: 'sonar:sonar'
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'isaiasdocker'
+    repository: $(docker_repo)
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+
+
+
+
+
+
+
+
+
+
+
+

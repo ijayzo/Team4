@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6f40458-40df-4a9e-b17a-a9048cf397d3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/azurek8s.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/azurek8s.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-pipelines.yml" beforeDir="false" afterPath="$PROJECT_DIR$/azure-pipelines.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +39,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/demo/Controllers/PackageSignUpController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -89,7 +95,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="16" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../app3mailsender" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -218,6 +224,8 @@
       <workItem from="1646634086968" duration="27000" />
       <workItem from="1646634140004" duration="10633000" />
       <workItem from="1646703165250" duration="8179000" />
+      <workItem from="1649182686088" duration="1176000" />
+      <workItem from="1649626394510" duration="772000" />
     </task>
     <servers />
   </component>
@@ -240,7 +248,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java</url>
-          <line>25</line>
+          <line>34</line>
           <properties class="com.example.demo.Services.EmployeeServices">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -294,8 +302,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/Services/EmployeeServices.java</url>
-          <line>31</line>
-          <properties class="com.example.demo.Services.EmployeeServices" method="createEmployee">
+          <line>42</line>
+          <properties class="com.example.demo.Services.EmployeeServices">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: project2team4-deployment
+  name: project2team4-azurek8s
 spec:
   replicas: 2
   selector:
@@ -14,12 +14,12 @@ spec:
         app: java-deployment
     spec:
       containers:
-      - image: project2team4/java:latest
-        env:
-          - name: REACT_URL
-            value: http://34.70.19.242:3030
-          - name: EMAIL_URL
-            value: http://34.135.244.116:8079
+      - image: ijayzo/azuretest:latest
+        # env:
+        #   - name: REACT_URL
+        #     value: http://34.70.19.242:3030
+        #   - name: EMAIL_URL
+        #     value: http://34.135.244.116:8079
         imagePullPolicy: Always
         name: javacontainer
         ports: 
@@ -43,14 +43,25 @@ spec:
   selector:
     app: java-deployment
 ---
-apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
-metadata:
-  name: java-service-monitor
-spec:
-  selector:
-    matchLabels:
-      app: java-deployment
-  endpoints:
-    - port: http-app1
-      path: "/actuator/prometheus"
+# apiVersion: monitoring.coreos.com/v1
+# kind: ServiceMonitor
+# metadata:
+#   name: java-service-monitor
+# spec:
+#   selector:
+#     matchLabels:
+#       app: java-deployment
+#   endpoints:
+#     - port: http-app1
+#       path: "/actuator/prometheus"
+---
+# containers:
+#   - name: azuretest
+#     image: ijayzo/azuretest:latest
+#     ports:
+#     - containerPort: 80
+#     resources:
+#       requests:
+#         cpu: 250m
+#       limits:
+#         cpu: 500m
